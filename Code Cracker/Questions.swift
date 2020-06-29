@@ -24,8 +24,9 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     var questionsArray = [Question]()
     var score: Int = 0
     var currentQuestionNumber = 1
-    
     var window: UIWindow?
+    var category: String = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,14 +51,24 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         
         self.view.addSubview(myCollectionView)
         
-        let que1 = Question(imgName: "img1", questionText: "What is 2 x 2 ?", options: ["2", "4", "8", "6"], correctAns: 1, wrongAns: -1, isAnswered: false)
-        let que2 = Question(imgName: "img2", questionText: "What is 4 + 2 ?", options: ["9", "4", "3", "6"], correctAns: 3, wrongAns: -1, isAnswered: false)
-        let que3 = Question(imgName: "img1", questionText: "What is 6 / 2 ?", options: ["2", "4", "3", "5"], correctAns: 2, wrongAns: -1, isAnswered: false)
-        let que4 = Question(imgName: "img2", questionText: "What is 2 - 2 ?", options: ["2", "4", "1", "0"], correctAns: 3, wrongAns: -1, isAnswered: false)
-        let que5 = Question(imgName: "img1", questionText: "What is 12 x 2 ?", options: ["24", "40", "26", "34"], correctAns: 0, wrongAns: -1, isAnswered: false)
-        let que6 = Question(imgName: "img2", questionText: "What is the color of sky?", options: ["Violet", "Yellow", "Blue", "White"], correctAns: 2, wrongAns: -1, isAnswered: false)
-        questionsArray = [que1, que2, que3, que4, que5, que6]
-        
+        let jv1 = Question(imgName: "img1", questionText: "What is java x 2 ?", options: ["2", "4", "8", "6"], correctAns: 1, wrongAns: -1, isAnswered: false)
+        let jv2 = Question(imgName: "img2", questionText: "What is 4 + 2 ?", options: ["9", "4", "3", "6"], correctAns: 3, wrongAns: -1, isAnswered: false)
+        let jv3 = Question(imgName: "img1", questionText: "What is 6 / 2 ?", options: ["2", "4", "3", "5"], correctAns: 2, wrongAns: -1, isAnswered: false)
+        let jv4 = Question(imgName: "img2", questionText: "What is 2 - 2 ?", options: ["2", "4", "1", "0"], correctAns: 3, wrongAns: -1, isAnswered: false)
+        let jv5 = Question(imgName: "img1", questionText: "What is 12 x 2 ?", options: ["24", "40", "26", "34"], correctAns: 0, wrongAns: -1, isAnswered: false)
+        let jv6 = Question(imgName: "img2", questionText: "What is the color of sky?", options: ["Violet", "Yellow", "Blue", "White"], correctAns: 2, wrongAns: -1, isAnswered: false)
+        let py1 = Question(imgName: "img1", questionText: "What is python?", options: ["2", "4", "8", "6"], correctAns: 1, wrongAns: -1, isAnswered: false)
+        let py2 = Question(imgName: "img2", questionText: "What is python ?", options: ["9", "4", "3", "6"], correctAns: 3, wrongAns: -1, isAnswered: false)
+        let py3 = Question(imgName: "img1", questionText: "What is asdf?", options: ["2", "4", "3", "5"], correctAns: 2, wrongAns: -1, isAnswered: false)
+        let py4 = Question(imgName: "img2", questionText: "What is 2 - 2asdf ?", options: ["2", "4", "1", "0"], correctAns: 3, wrongAns: -1, isAnswered: false)
+        let py5 = Question(imgName: "img1", questionText: "What is 12 x f2 ?", options: ["24", "40", "26", "34"], correctAns: 0, wrongAns: -1, isAnswered: false)
+        let py6 = Question(imgName: "img2", questionText: "What is the color of sky?", options: ["Violet", "Yellow", "Blue", "White"], correctAns: 2, wrongAns: -1, isAnswered: false)
+        if category == "Python" {
+            questionsArray = [py1, py2, py3, py4, py5, py6]
+        }
+        else if category == "Java" {
+            questionsArray = [jv1, jv2, jv3, jv4, jv5, jv6]
+        }
         setupViews()
     }
     
@@ -76,6 +87,10 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         setQuestionNumber()
     }
     
+    func setCategory(cat:String) {
+        category = cat
+    }
+    
     func setQuestionNumber() {
         let x = myCollectionView.contentOffset.x
         let w = myCollectionView.bounds.size.width
@@ -86,7 +101,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         }
     }
     
-   /* @objc func btnPrevNextAction(sender: UIButton) {
+   @objc func btnPrevNextAction(sender: UIButton) {
         if sender == btnNext && currentQuestionNumber == questionsArray.count {
             let v=ResultVC()
             v.score = score
@@ -106,7 +121,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         }
         self.moveToFrame(contentOffset: contentOffset)
         lblQueNumber.text = "Question: \(currentQuestionNumber) / \(questionsArray.count)"
-    }*/
+    }
     
     func moveToFrame(contentOffset : CGFloat) {
         let frame: CGRect = CGRect(x : contentOffset ,y : self.myCollectionView.contentOffset.y ,width : self.myCollectionView.frame.width,height : self.myCollectionView.frame.height)
@@ -119,7 +134,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         myCollectionView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive=true
         myCollectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive=true
         
-        /*self.view.addSubview(btnPrev)
+        self.view.addSubview(btnPrev)
         btnPrev.heightAnchor.constraint(equalToConstant: 50).isActive=true
         btnPrev.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.5).isActive=true
         btnPrev.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive=true
@@ -129,11 +144,11 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         btnNext.heightAnchor.constraint(equalTo: btnPrev.heightAnchor).isActive=true
         btnNext.widthAnchor.constraint(equalTo: btnPrev.widthAnchor).isActive=true
         btnNext.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive=true
-        btnNext.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive=true*/
+        btnNext.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive=true
         
         
         
-        /*self.view.addSubview(lblQueNumber)
+        self.view.addSubview(lblQueNumber)
         lblQueNumber.heightAnchor.constraint(equalToConstant: 20).isActive=true
         lblQueNumber.widthAnchor.constraint(equalToConstant: 150).isActive=true
         lblQueNumber.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20).isActive=true
@@ -145,10 +160,10 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         lblScore.widthAnchor.constraint(equalTo: lblQueNumber.widthAnchor).isActive=true
         lblScore.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -20).isActive=true
         lblScore.bottomAnchor.constraint(equalTo: lblQueNumber.bottomAnchor).isActive=true
-        lblScore.text = "Score: \(score) / \(questionsArray.count)" */
+        lblScore.text = "Score: \(score) / \(questionsArray.count)"
     }
     
-   /* let btnPrev: UIButton = {
+    let btnPrev: UIButton = {
         let btn=UIButton()
         btn.setTitle("< Previous", for: .normal)
         btn.setTitleColor(UIColor.white, for: .normal)
@@ -186,7 +201,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         lbl.font = UIFont.systemFont(ofSize: 16)
         lbl.translatesAutoresizingMaskIntoConstraints=false
         return lbl
-    }()*/
+    }()
 }
 
 extension QuizVC: QuizCVCellDelegate {
@@ -200,7 +215,7 @@ extension QuizVC: QuizCVCellDelegate {
         } else {
             score += 1
         }
-//        lblScore.text = "Score: \(score) / \(questionsArray.count)"
+        lblScore.text = "Score: \(score) / \(questionsArray.count)"
         myCollectionView.reloadItems(at: [index])
     }
     

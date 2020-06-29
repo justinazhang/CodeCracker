@@ -21,10 +21,18 @@ class Categories: UIViewController {
     @objc func btnPythonAction() {
         let v=QuizVC()
         self.navigationController?.pushViewController(v, animated: true)
+        v.setCategory(cat: "Python")
     }
     
     @objc func btnJavaAction() {
         let v=QuizVC()
+        self.navigationController?.pushViewController(v, animated: true)
+        v.setCategory(cat: "Java")
+    }
+    
+    @objc func btnDataAction() {
+        let v=QuizVC()
+    
         self.navigationController?.pushViewController(v, animated: true)
     }
     
@@ -46,6 +54,12 @@ class Categories: UIViewController {
         btnJava.widthAnchor.constraint(equalToConstant: 150).isActive=true
         btnJava.heightAnchor.constraint(equalToConstant: 50).isActive=true
         btnJava.addTarget(self, action: #selector(btnJavaAction), for: .touchUpInside)
+        self.view.addSubview(btnData)
+        btnData.topAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 130).isActive=true
+        btnData.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
+        btnData.widthAnchor.constraint(equalToConstant: 150).isActive=true
+        btnData.heightAnchor.constraint(equalToConstant: 50).isActive=true
+        btnData.addTarget(self, action: #selector(btnDataAction), for: .touchUpInside)
     }
 
     
@@ -74,6 +88,17 @@ class Categories: UIViewController {
     let btnJava: UIButton = {
         let btn = UIButton()
         btn.setTitle("Java", for: .normal)
+        btn.setTitleColor(UIColor.white, for: .normal)
+        btn.backgroundColor=UIColor.orange
+        btn.layer.cornerRadius=5
+        btn.clipsToBounds=true
+        btn.translatesAutoresizingMaskIntoConstraints=false
+        return btn
+    }()
+    
+    let btnData: UIButton = {
+        let btn = UIButton()
+        btn.setTitle("Data Structures", for: .normal)
         btn.setTitleColor(UIColor.white, for: .normal)
         btn.backgroundColor=UIColor.orange
         btn.layer.cornerRadius=5
