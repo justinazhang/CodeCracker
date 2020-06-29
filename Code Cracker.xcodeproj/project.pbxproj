@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		069140AC24A9646C00695912 /* CamingoCode-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 069140AB24A9646C00695912 /* CamingoCode-Regular.ttf */; };
+		17687ACE24A96FF2006CC0D9 /* CategoryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17687ACD24A96FF2006CC0D9 /* CategoryScreen.swift */; };
 		176ED12624A85F02000B99A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176ED12524A85F02000B99A3 /* AppDelegate.swift */; };
 		176ED12824A85F02000B99A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176ED12724A85F02000B99A3 /* SceneDelegate.swift */; };
 		176ED12A24A85F02000B99A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176ED12924A85F02000B99A3 /* ViewController.swift */; };
@@ -19,7 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		069140AB24A9646C00695912 /* CamingoCode-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CamingoCode-Regular.ttf"; path = "../../../../Downloads/camingocode/CamingoCode-Regular.ttf"; sourceTree = "<group>"; };
+		17687ACD24A96FF2006CC0D9 /* CategoryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryScreen.swift; sourceTree = "<group>"; };
 		176ED12224A85F02000B99A3 /* Code Cracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Code Cracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		176ED12524A85F02000B99A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		176ED12724A85F02000B99A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,10 +62,10 @@
 		176ED12424A85F02000B99A3 /* Code Cracker */ = {
 			isa = PBXGroup;
 			children = (
-				069140AB24A9646C00695912 /* CamingoCode-Regular.ttf */,
 				176ED12524A85F02000B99A3 /* AppDelegate.swift */,
 				176ED12724A85F02000B99A3 /* SceneDelegate.swift */,
 				176ED12924A85F02000B99A3 /* ViewController.swift */,
+				17687ACD24A96FF2006CC0D9 /* CategoryScreen.swift */,
 				176ED13924A85FA7000B99A3 /* Questions.swift */,
 				176ED13B24A85FC5000B99A3 /* Answers.swift */,
 				176ED13D24A85FE7000B99A3 /* EndScreen.swift */,
@@ -134,7 +134,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				069140AC24A9646C00695912 /* CamingoCode-Regular.ttf in Resources */,
 				176ED13224A85F02000B99A3 /* LaunchScreen.storyboard in Resources */,
 				176ED12F24A85F02000B99A3 /* Assets.xcassets in Resources */,
 			);
@@ -151,6 +150,7 @@
 				176ED13E24A85FE7000B99A3 /* EndScreen.swift in Sources */,
 				176ED13A24A85FA7000B99A3 /* Questions.swift in Sources */,
 				176ED12624A85F02000B99A3 /* AppDelegate.swift in Sources */,
+				17687ACE24A96FF2006CC0D9 /* CategoryScreen.swift in Sources */,
 				176ED13C24A85FC5000B99A3 /* Answers.swift in Sources */,
 				176ED12824A85F02000B99A3 /* SceneDelegate.swift in Sources */,
 			);

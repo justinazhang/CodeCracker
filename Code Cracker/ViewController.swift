@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     }
     
     @objc func btnGetStartedAction() {
-        let v=QuizVC()
+        let v=Categories()
         self.navigationController?.pushViewController(v, animated: true)
     }
     
