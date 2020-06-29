@@ -30,7 +30,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title="Home"
-        self.view.backgroundColor=UIColor.white
+        self.view.backgroundColor=UIColor.darkGray //change
         
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -45,7 +45,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         myCollectionView.register(QuizCVCell.self, forCellWithReuseIdentifier: "Cell")
         myCollectionView.showsHorizontalScrollIndicator = false
         myCollectionView.translatesAutoresizingMaskIntoConstraints=false
-        myCollectionView.backgroundColor=UIColor.white
+        myCollectionView.backgroundColor=UIColor.darkGray //change
         myCollectionView.isPagingEnabled = true
         
         self.view.addSubview(myCollectionView)
@@ -81,12 +81,12 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         let w = myCollectionView.bounds.size.width
         let currentPage = Int(ceil(x/w))
         if currentPage < questionsArray.count {
-            lblQueNumber.text = "Question: \(currentPage+1) / \(questionsArray.count)"
+//            lblQueNumber.text = "Question: \(currentPage+1) / \(questionsArray.count)"
             currentQuestionNumber = currentPage + 1
         }
     }
     
-    @objc func btnPrevNextAction(sender: UIButton) {
+   /* @objc func btnPrevNextAction(sender: UIButton) {
         if sender == btnNext && currentQuestionNumber == questionsArray.count {
             let v=ResultVC()
             v.score = score
@@ -106,7 +106,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         }
         self.moveToFrame(contentOffset: contentOffset)
         lblQueNumber.text = "Question: \(currentQuestionNumber) / \(questionsArray.count)"
-    }
+    }*/
     
     func moveToFrame(contentOffset : CGFloat) {
         let frame: CGRect = CGRect(x : contentOffset ,y : self.myCollectionView.contentOffset.y ,width : self.myCollectionView.frame.width,height : self.myCollectionView.frame.height)
@@ -119,7 +119,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         myCollectionView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive=true
         myCollectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive=true
         
-        self.view.addSubview(btnPrev)
+        /*self.view.addSubview(btnPrev)
         btnPrev.heightAnchor.constraint(equalToConstant: 50).isActive=true
         btnPrev.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.5).isActive=true
         btnPrev.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive=true
@@ -129,9 +129,11 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         btnNext.heightAnchor.constraint(equalTo: btnPrev.heightAnchor).isActive=true
         btnNext.widthAnchor.constraint(equalTo: btnPrev.widthAnchor).isActive=true
         btnNext.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive=true
-        btnNext.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive=true
+        btnNext.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive=true*/
         
-        self.view.addSubview(lblQueNumber)
+        
+        
+        /*self.view.addSubview(lblQueNumber)
         lblQueNumber.heightAnchor.constraint(equalToConstant: 20).isActive=true
         lblQueNumber.widthAnchor.constraint(equalToConstant: 150).isActive=true
         lblQueNumber.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20).isActive=true
@@ -143,10 +145,10 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         lblScore.widthAnchor.constraint(equalTo: lblQueNumber.widthAnchor).isActive=true
         lblScore.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -20).isActive=true
         lblScore.bottomAnchor.constraint(equalTo: lblQueNumber.bottomAnchor).isActive=true
-        lblScore.text = "Score: \(score) / \(questionsArray.count)"
+        lblScore.text = "Score: \(score) / \(questionsArray.count)" */
     }
     
-    let btnPrev: UIButton = {
+   /* let btnPrev: UIButton = {
         let btn=UIButton()
         btn.setTitle("< Previous", for: .normal)
         btn.setTitleColor(UIColor.white, for: .normal)
@@ -169,7 +171,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     let lblQueNumber: UILabel = {
         let lbl=UILabel()
         lbl.text="0 / 0"
-        lbl.textColor=UIColor.gray
+        lbl.textColor=UIColor.green
         lbl.textAlignment = .left
         lbl.font = UIFont.systemFont(ofSize: 16)
         lbl.translatesAutoresizingMaskIntoConstraints=false
@@ -184,7 +186,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         lbl.font = UIFont.systemFont(ofSize: 16)
         lbl.translatesAutoresizingMaskIntoConstraints=false
         return lbl
-    }()
+    }()*/
 }
 
 extension QuizVC: QuizCVCellDelegate {
@@ -198,7 +200,7 @@ extension QuizVC: QuizCVCellDelegate {
         } else {
             score += 1
         }
-        lblScore.text = "Score: \(score) / \(questionsArray.count)"
+//        lblScore.text = "Score: \(score) / \(questionsArray.count)"
         myCollectionView.reloadItems(at: [index])
     }
     

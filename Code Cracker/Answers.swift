@@ -25,7 +25,7 @@ class QuizCVCell: UICollectionViewCell {
     var question: Question? {
         didSet {
             guard let unwrappedQue = question else { return }
-            imgView.image = UIImage(named: unwrappedQue.imgName)
+            //imgView.image = UIImage(named: unwrappedQue.imgName)
             lblQue.text = unwrappedQue.questionText
             btn1.setTitle(unwrappedQue.options[0], for: .normal)
             btn2.setTitle(unwrappedQue.options[1], for: .normal)
