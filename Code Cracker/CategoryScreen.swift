@@ -21,20 +21,22 @@ class Categories: UIViewController {
     }
     
     @objc func btnPythonAction() {
-        let v=QuizVC()
-        self.navigationController?.pushViewController(v, animated: true)
+        let v=QuestionNumber()
         v.setCategory(cat: "Python")
+        self.navigationController?.pushViewController(v, animated: true)
+       
     }
     
     @objc func btnJavaAction() {
-        let v=QuizVC()
-        self.navigationController?.pushViewController(v, animated: true)
+        let v=QuestionNumber()
         v.setCategory(cat: "Java")
+        self.navigationController?.pushViewController(v, animated: true)
+        
     }
     
     @objc func btnDataAction() {
-        let v=QuizVC()
-    
+        let v=QuestionNumber()
+        v.setCategory(cat: "Data")
         self.navigationController?.pushViewController(v, animated: true)
     }
     
