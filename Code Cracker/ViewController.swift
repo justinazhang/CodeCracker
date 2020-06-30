@@ -18,7 +18,12 @@ class ViewController: UIViewController {
         self.view.backgroundColor=UIColor.darkGray //change
         
         setupViews()
+        
     }
+    
+    var Fonts = [
+        "CamingoCode-Regular"
+    ]
     
     @objc func btnGetStartedAction() {
         let v=Categories()
@@ -34,17 +39,20 @@ class ViewController: UIViewController {
         
         self.view.addSubview(btnGetStarted)
         btnGetStarted.heightAnchor.constraint(equalToConstant: 80).isActive=true //change
-        btnGetStarted.widthAnchor.constraint(equalToConstant: 150).isActive=true //change
+        btnGetStarted.widthAnchor.constraint(equalToConstant: 175).isActive=true //change
         btnGetStarted.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
-        btnGetStarted.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 0).isActive=true
+        btnGetStarted.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 50).isActive=true
     }
     
     let lblTitle: UILabel = {
         let lbl=UILabel()
+        let customFont = UIFont(name: "CamingoCode-Regular", size: 50)
+        let customLabel = UILabel()
+        customLabel.font = customFont
         lbl.text="Code Cracker"
         lbl.textColor=UIColor.green //change
         lbl.textAlignment = .center
-        lbl.font = UIFont.systemFont(ofSize: 50)//change
+        lbl.font = customFont//change
         lbl.numberOfLines=2
         lbl.translatesAutoresizingMaskIntoConstraints=false
         return lbl
@@ -52,10 +60,14 @@ class ViewController: UIViewController {
     
     let btnGetStarted: UIButton = {
         let btn=UIButton()
+        let customFont = UIFont(name: "CamingoCode-Regular", size: 25)
+        let customLabel = UIButton()
+        //customLabel.font = customFont
         btn.setTitle("Get Started", for: .normal)
+        btn.titleLabel?.font = customFont
         btn.setTitleColor(UIColor.green, for: .normal) //change
         btn.backgroundColor=UIColor.black //change
-        btn.layer.cornerRadius=25 //change
+        btn.layer.cornerRadius=25
         btn.layer.masksToBounds=true
         btn.translatesAutoresizingMaskIntoConstraints=false
         btn.addTarget(self, action: #selector(btnGetStartedAction), for: .touchUpInside)

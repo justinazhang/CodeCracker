@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Code Cracker.xcodeproj">
+      location = "group:../Code Cracker">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>
