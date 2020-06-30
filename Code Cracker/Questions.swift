@@ -24,6 +24,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     var questionsArray = [Question]()
     var score: Int = 0
     var currentQuestionNumber = 1
+    var start = 0;
     var window: UIWindow?
     var category: String = ""
     
@@ -51,15 +52,15 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         
         self.view.addSubview(myCollectionView)
         
-        let jv1 = Question(imgName: "img1", questionText: "What is java x 2 ?", options: ["2", "4", "8", "6"], correctAns: 1, wrongAns: -1, isAnswered: false)
-        let jv2 = Question(imgName: "img2", questionText: "What is 4 + 2 ?", options: ["9", "4", "3", "6"], correctAns: 3, wrongAns: -1, isAnswered: false)
-        let jv3 = Question(imgName: "img1", questionText: "What is 6 / 2 ?", options: ["2", "4", "3", "5"], correctAns: 2, wrongAns: -1, isAnswered: false)
+        let jv1 = Question(imgName: "img1", questionText: "What is java1 ?", options: ["2", "4", "8", "6"], correctAns: 1, wrongAns: -1, isAnswered: false)
+        let jv2 = Question(imgName: "img2", questionText: "What is java2 ?", options: ["9", "4", "3", "6"], correctAns: 3, wrongAns: -1, isAnswered: false)
+        let jv3 = Question(imgName: "img1", questionText: "What is java3 ?", options: ["2", "4", "3", "5"], correctAns: 2, wrongAns: -1, isAnswered: false)
         let jv4 = Question(imgName: "img2", questionText: "What is 2 - 2 ?", options: ["2", "4", "1", "0"], correctAns: 3, wrongAns: -1, isAnswered: false)
         let jv5 = Question(imgName: "img1", questionText: "What is 12 x 2 ?", options: ["24", "40", "26", "34"], correctAns: 0, wrongAns: -1, isAnswered: false)
         let jv6 = Question(imgName: "img2", questionText: "What is the color of sky?", options: ["Violet", "Yellow", "Blue", "White"], correctAns: 2, wrongAns: -1, isAnswered: false)
-        let py1 = Question(imgName: "img1", questionText: "What is python?", options: ["2", "4", "8", "6"], correctAns: 1, wrongAns: -1, isAnswered: false)
-        let py2 = Question(imgName: "img2", questionText: "What is python ?", options: ["9", "4", "3", "6"], correctAns: 3, wrongAns: -1, isAnswered: false)
-        let py3 = Question(imgName: "img1", questionText: "What is asdf?", options: ["2", "4", "3", "5"], correctAns: 2, wrongAns: -1, isAnswered: false)
+        let py1 = Question(imgName: "img1", questionText: "What is python1?", options: ["2", "4", "8", "6"], correctAns: 1, wrongAns: -1, isAnswered: false)
+        let py2 = Question(imgName: "img2", questionText: "What is python2 ?", options: ["9", "4", "3", "6"], correctAns: 3, wrongAns: -1, isAnswered: false)
+        let py3 = Question(imgName: "img1", questionText: "What is asdf3?", options: ["2", "4", "3", "5"], correctAns: 2, wrongAns: -1, isAnswered: false)
         let py4 = Question(imgName: "img2", questionText: "What is 2 - 2asdf ?", options: ["2", "4", "1", "0"], correctAns: 3, wrongAns: -1, isAnswered: false)
         let py5 = Question(imgName: "img1", questionText: "What is 12 x f2 ?", options: ["24", "40", "26", "34"], correctAns: 0, wrongAns: -1, isAnswered: false)
         let py6 = Question(imgName: "img2", questionText: "What is the color of sky?", options: ["Violet", "Yellow", "Blue", "White"], correctAns: 2, wrongAns: -1, isAnswered: false)
@@ -69,6 +70,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         else if category == "Java" {
             questionsArray = [jv1, jv2, jv3, jv4, jv5, jv6]
         }
+        questionsArray = Array(questionsArray[start...])
         setupViews()
     }
     
@@ -91,12 +93,16 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         category = cat
     }
     
+    func setQuestionStart(questionNum:Int) {
+        start = questionNum
+    }
+    
     func setQuestionNumber() {
         let x = myCollectionView.contentOffset.x
         let w = myCollectionView.bounds.size.width
         let currentPage = Int(ceil(x/w))
         if currentPage < questionsArray.count {
-//            lblQueNumber.text = "Question: \(currentPage+1) / \(questionsArray.count)"
+            lblQueNumber.text = "Question: \(currentPage+1) / \(questionsArray.count)"
             currentQuestionNumber = currentPage + 1
         }
     }
@@ -114,7 +120,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         var contentOffset: CGFloat = 0
         if sender == btnNext {
             contentOffset = CGFloat(floor(self.myCollectionView.contentOffset.x + collectionBounds.size.width))
-            currentQuestionNumber += currentQuestionNumber >= questionsArray.count ? 0 : 1
+            currentQuestionNumber += currentQuestionNumber >= questionsArray.count + start ? 0 : 1
         } else {
             contentOffset = CGFloat(floor(self.myCollectionView.contentOffset.x - collectionBounds.size.width))
             currentQuestionNumber -= currentQuestionNumber <= 0 ? 0 : 1
