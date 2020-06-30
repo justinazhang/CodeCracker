@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		064ABC7A24ABB8050019A2AB /* CamingoCode-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 064ABC7924ABB8050019A2AB /* CamingoCode-Regular.ttf */; };
+		064ABC7E24ABBBA40019A2AB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064ABC7D24ABBBA40019A2AB /* Constants.swift */; };
 		17687ACE24A96FF2006CC0D9 /* CategoryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17687ACD24A96FF2006CC0D9 /* CategoryScreen.swift */; };
 		176ED12624A85F02000B99A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176ED12524A85F02000B99A3 /* AppDelegate.swift */; };
 		176ED12824A85F02000B99A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176ED12724A85F02000B99A3 /* SceneDelegate.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		064ABC7924ABB8050019A2AB /* CamingoCode-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CamingoCode-Regular.ttf"; sourceTree = "<group>"; };
+		064ABC7D24ABBBA40019A2AB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		17687ACD24A96FF2006CC0D9 /* CategoryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryScreen.swift; sourceTree = "<group>"; };
 		176ED12224A85F02000B99A3 /* Code Cracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Code Cracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		176ED12524A85F02000B99A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		064ABC7824ABB7C70019A2AB /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				064ABC7924ABB8050019A2AB /* CamingoCode-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		176ED11924A85F02000B99A3 = {
 			isa = PBXGroup;
 			children = (
@@ -62,8 +74,10 @@
 		176ED12424A85F02000B99A3 /* Code Cracker */ = {
 			isa = PBXGroup;
 			children = (
+				064ABC7824ABB7C70019A2AB /* Fonts */,
 				176ED12524A85F02000B99A3 /* AppDelegate.swift */,
 				176ED12724A85F02000B99A3 /* SceneDelegate.swift */,
+				064ABC7D24ABBBA40019A2AB /* Constants.swift */,
 				176ED12924A85F02000B99A3 /* ViewController.swift */,
 				17687ACD24A96FF2006CC0D9 /* CategoryScreen.swift */,
 				176ED13924A85FA7000B99A3 /* Questions.swift */,
@@ -136,6 +150,7 @@
 			files = (
 				176ED13224A85F02000B99A3 /* LaunchScreen.storyboard in Resources */,
 				176ED12F24A85F02000B99A3 /* Assets.xcassets in Resources */,
+				064ABC7A24ABB8050019A2AB /* CamingoCode-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +168,7 @@
 				17687ACE24A96FF2006CC0D9 /* CategoryScreen.swift in Sources */,
 				176ED13C24A85FC5000B99A3 /* Answers.swift in Sources */,
 				176ED12824A85F02000B99A3 /* SceneDelegate.swift in Sources */,
+				064ABC7E24ABBBA40019A2AB /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

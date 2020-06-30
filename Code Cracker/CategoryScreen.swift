@@ -11,9 +11,11 @@ import UIKit
 class Categories: UIViewController {
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title="Category Screen"
+        self.view.backgroundColor=UIColor.darkGray
     
         setupViews()
     }
@@ -43,22 +45,22 @@ class Categories: UIViewController {
         lblTitle.widthAnchor.constraint(equalToConstant: 450).isActive=true //change
         lblTitle.heightAnchor.constraint(equalToConstant: 80).isActive=true //change
         self.view.addSubview(btnPython)
-        btnPython.topAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -30).isActive=true
+        btnPython.topAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -50).isActive=true
         btnPython.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
-        btnPython.widthAnchor.constraint(equalToConstant: 150).isActive=true
-        btnPython.heightAnchor.constraint(equalToConstant: 50).isActive=true
+        btnPython.widthAnchor.constraint(equalToConstant: 175).isActive=true
+        btnPython.heightAnchor.constraint(equalToConstant: 80).isActive=true
         btnPython.addTarget(self, action: #selector(btnPythonAction), for: .touchUpInside)
         self.view.addSubview(btnJava)
         btnJava.topAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 50).isActive=true
         btnJava.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
-        btnJava.widthAnchor.constraint(equalToConstant: 150).isActive=true
-        btnJava.heightAnchor.constraint(equalToConstant: 50).isActive=true
+        btnJava.widthAnchor.constraint(equalToConstant: 175).isActive=true
+        btnJava.heightAnchor.constraint(equalToConstant: 80).isActive=true
         btnJava.addTarget(self, action: #selector(btnJavaAction), for: .touchUpInside)
         self.view.addSubview(btnData)
-        btnData.topAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 130).isActive=true
+        btnData.topAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 150).isActive=true
         btnData.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
-        btnData.widthAnchor.constraint(equalToConstant: 150).isActive=true
-        btnData.heightAnchor.constraint(equalToConstant: 50).isActive=true
+        btnData.widthAnchor.constraint(equalToConstant: 175).isActive=true
+        btnData.heightAnchor.constraint(equalToConstant: 80).isActive=true
         btnData.addTarget(self, action: #selector(btnDataAction), for: .touchUpInside)
     }
 
@@ -77,9 +79,9 @@ class Categories: UIViewController {
     let btnPython: UIButton = {
         let btn = UIButton()
         btn.setTitle("Python", for: .normal)
-        btn.setTitleColor(UIColor.white, for: .normal)
-        btn.backgroundColor=UIColor.orange
-        btn.layer.cornerRadius=5
+        btn.setTitleColor(UIColor.green, for: .normal)
+        btn.backgroundColor=UIColor.black
+        btn.layer.cornerRadius=15
         btn.clipsToBounds=true
         btn.translatesAutoresizingMaskIntoConstraints=false
         return btn
@@ -88,9 +90,9 @@ class Categories: UIViewController {
     let btnJava: UIButton = {
         let btn = UIButton()
         btn.setTitle("Java", for: .normal)
-        btn.setTitleColor(UIColor.white, for: .normal)
-        btn.backgroundColor=UIColor.orange
-        btn.layer.cornerRadius=5
+        btn.setTitleColor(UIColor.green, for: .normal)
+        btn.backgroundColor=UIColor.black
+        btn.layer.cornerRadius=15
         btn.clipsToBounds=true
         btn.translatesAutoresizingMaskIntoConstraints=false
         return btn
@@ -99,9 +101,9 @@ class Categories: UIViewController {
     let btnData: UIButton = {
         let btn = UIButton()
         btn.setTitle("Data Structures", for: .normal)
-        btn.setTitleColor(UIColor.white, for: .normal)
-        btn.backgroundColor=UIColor.orange
-        btn.layer.cornerRadius=5
+        btn.setTitleColor(UIColor.green, for: .normal)
+        btn.backgroundColor=UIColor.black
+        btn.layer.cornerRadius=15
         btn.clipsToBounds=true
         btn.translatesAutoresizingMaskIntoConstraints=false
         return btn
