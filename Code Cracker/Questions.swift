@@ -107,8 +107,8 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         }
     }
     
-   @objc func btnPrevNextAction(sender: UIButton) {
-        if sender == btnNext && currentQuestionNumber == questionsArray.count {
+   @objc func btnNextAction() {
+        if currentQuestionNumber == questionsArray.count {
             let v=ResultVC()
             v.score = score
             v.totalScore = questionsArray.count
@@ -118,15 +118,10 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         
         let collectionBounds = self.myCollectionView.bounds
         var contentOffset: CGFloat = 0
-        if sender == btnNext {
-            contentOffset = CGFloat(floor(self.myCollectionView.contentOffset.x + collectionBounds.size.width))
-            currentQuestionNumber += currentQuestionNumber >= questionsArray.count + start ? 0 : 1
-        } else {
-            contentOffset = CGFloat(floor(self.myCollectionView.contentOffset.x - collectionBounds.size.width))
-            currentQuestionNumber -= currentQuestionNumber <= 0 ? 0 : 1
-        }
+        contentOffset = CGFloat(floor(self.myCollectionView.contentOffset.x + collectionBounds.size.width))
+        currentQuestionNumber += currentQuestionNumber >= questionsArray.count + start ? 0 : 1
         self.moveToFrame(contentOffset: contentOffset)
-        lblQueNumber.text = "Question: \(currentQuestionNumber) / \(questionsArray.count)"
+        
     }
     
     func moveToFrame(contentOffset : CGFloat) {
@@ -140,44 +135,14 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         myCollectionView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive=true
         myCollectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive=true
         
-        self.view.addSubview(btnPrev)
-        btnPrev.heightAnchor.constraint(equalToConstant: 50).isActive=true
-        btnPrev.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.5).isActive=true
-        btnPrev.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive=true
-        btnPrev.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive=true
-        
         self.view.addSubview(btnNext)
-        btnNext.heightAnchor.constraint(equalTo: btnPrev.heightAnchor).isActive=true
-        btnNext.widthAnchor.constraint(equalTo: btnPrev.widthAnchor).isActive=true
+        btnNext.heightAnchor.constraint(equalToConstant: 50).isActive=true
+        btnNext.widthAnchor.constraint(equalTo: self.view.widthAnchor,multiplier:0.5).isActive=true
         btnNext.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive=true
         btnNext.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive=true
         
-        
-        
-        self.view.addSubview(lblQueNumber)
-        lblQueNumber.heightAnchor.constraint(equalToConstant: 20).isActive=true
-        lblQueNumber.widthAnchor.constraint(equalToConstant: 150).isActive=true
-        lblQueNumber.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20).isActive=true
-        lblQueNumber.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -80).isActive=true
-        lblQueNumber.text = "Question: \(1) / \(questionsArray.count)"
-        
-        self.view.addSubview(lblScore)
-        lblScore.heightAnchor.constraint(equalTo: lblQueNumber.heightAnchor).isActive=true
-        lblScore.widthAnchor.constraint(equalTo: lblQueNumber.widthAnchor).isActive=true
-        lblScore.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -20).isActive=true
-        lblScore.bottomAnchor.constraint(equalTo: lblQueNumber.bottomAnchor).isActive=true
-        lblScore.text = "Score: \(score) / \(questionsArray.count)"
-    }
     
-    let btnPrev: UIButton = {
-        let btn=UIButton()
-        btn.setTitle("< Previous", for: .normal)
-        btn.setTitleColor(UIColor.white, for: .normal)
-        btn.backgroundColor=UIColor.orange
-        btn.translatesAutoresizingMaskIntoConstraints=false
-        btn.addTarget(self, action: #selector(btnPrevNextAction), for: .touchUpInside)
-        return btn
-    }()
+    }
     
     let btnNext: UIButton = {
         let btn=UIButton()
@@ -185,7 +150,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         btn.setTitleColor(UIColor.white, for: .normal)
         btn.backgroundColor=UIColor.purple
         btn.translatesAutoresizingMaskIntoConstraints=false
-        btn.addTarget(self, action: #selector(btnPrevNextAction), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(btnNextAction), for: .touchUpInside)
         return btn
     }()
     

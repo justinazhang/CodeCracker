@@ -11,14 +11,15 @@ import UIKit
 class Categories: UIViewController {
     
     
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title="Category Screen"
         self.view.backgroundColor=UIColor.darkGray
-    
         setupViews()
     }
+    
     
     @objc func btnPythonAction() {
         let v=QuestionNumber()

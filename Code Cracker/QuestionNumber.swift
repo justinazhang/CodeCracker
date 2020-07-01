@@ -12,7 +12,6 @@ class QuestionNumber: UIViewController {
     
     var category:String = ""
     var buttonList = [UIButton]()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title="Question Number Screen"
@@ -33,37 +32,47 @@ class QuestionNumber: UIViewController {
         category = cat
     }
     func setupViews() {
-        self.view.addSubview(lblTitle)
-        lblTitle.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 150).isActive=true
-        lblTitle.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
-        lblTitle.widthAnchor.constraint(equalToConstant: 450).isActive=true //change
-        lblTitle.heightAnchor.constraint(equalToConstant: 80).isActive=true //change
-        self.view.addSubview(buttonList[0])
-        buttonList[0].topAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -50).isActive=true
-        buttonList[0].centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
-        buttonList[0].widthAnchor.constraint(equalToConstant: 175).isActive=true
-        buttonList[0].heightAnchor.constraint(equalToConstant: 80).isActive=true
-        buttonList[0].addTarget(self, action: #selector(btnfun), for: .touchUpInside)
-        self.view.addSubview(btnQ2)
-        btnQ2.topAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 50).isActive=true
-        btnQ2.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
-        btnQ2.widthAnchor.constraint(equalToConstant: 175).isActive=true
-        btnQ2.heightAnchor.constraint(equalToConstant: 80).isActive=true
-        btnQ2.addTarget(self, action: #selector(btnfun), for: .touchUpInside)
-        self.view.addSubview(btnQ3)
-        btnQ3.topAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 150).isActive=true
-        btnQ3.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
-        btnQ3.widthAnchor.constraint(equalToConstant: 175).isActive=true
-        btnQ3.heightAnchor.constraint(equalToConstant: 80).isActive=true
-        btnQ3.addTarget(self, action: #selector(btnfun), for: .touchUpInside)
+        createAllButtons()
     }
     
-    func createButtonRow() {
+    func createButtonRow(startY:Int,firstButtonIndex:Int,sHeight:CGFloat,sWidth:CGFloat) {
+        self.view.addSubview(buttonList[firstButtonIndex])
+        print(sHeight)
+        print(sWidth)
+        buttonList[firstButtonIndex].topAnchor.constraint(equalTo: self.view.topAnchor, constant:CGFloat(sHeight/8+CGFloat(startY))).isActive=true
+        buttonList[firstButtonIndex].leftAnchor.constraint(equalTo: self.view.leftAnchor,constant: sWidth/13).isActive=true
+        buttonList[firstButtonIndex].widthAnchor.constraint(equalToConstant: sHeight/10).isActive=true
+        buttonList[firstButtonIndex].heightAnchor.constraint(equalToConstant: sHeight/10).isActive=true
+        buttonList[firstButtonIndex].addTarget(self, action: #selector(btnfun), for: .touchUpInside)
+        createButtonRowHelper(prevButton:buttonList[firstButtonIndex],firstIndex:firstButtonIndex,sHeight:sHeight,sWidth: sWidth)
+    }
+    
+    func createAllButtons() {
+        var startIndex = 0
+        let screenRect = UIScreen.main.bounds
+        let screenWidth = screenRect.size.width
+        let screenHeight = screenRect.size.height
+        for n in stride(from:0, to: 3 * screenWidth/2, by:screenWidth/3) {
+            createButtonRow(startY:Int(n),firstButtonIndex:startIndex,sHeight:screenHeight,sWidth: screenWidth)
+            startIndex += 6
+        }
         
+    }
+    func createButtonRowHelper(prevButton:UIButton,firstIndex:Int,sHeight:CGFloat,sWidth:CGFloat) {
+        var oldButton = prevButton
+        for n in 1...4 {
+        self.view.addSubview(buttonList[n+firstIndex])
+        buttonList[n+firstIndex].topAnchor.constraint(equalTo: oldButton.topAnchor).isActive=true
+        buttonList[n+firstIndex].leftAnchor.constraint(equalTo: oldButton.leftAnchor,constant: sHeight/7).isActive=true
+        buttonList[n+firstIndex].widthAnchor.constraint(equalTo: oldButton.widthAnchor).isActive=true
+        buttonList[n+firstIndex].heightAnchor.constraint(equalTo: oldButton.heightAnchor).isActive=true
+        buttonList[n+firstIndex].addTarget(self, action: #selector(btnfun), for: .touchUpInside)
+        oldButton = buttonList[n+firstIndex]
+        }
     }
     
     func createButtons() {
-        for n in 1...4 {
+        for n in 1...28 {
             buttonList.append(createButton(index:n))
         }
     }
@@ -83,53 +92,8 @@ class QuestionNumber: UIViewController {
         }()
         return b
     }
-    
-    let lblTitle: UILabel = {
-        let lbl=UILabel()
-        lbl.text="Choose a Category"
-        lbl.textColor=UIColor.green
-        lbl.textAlignment = .center
-        lbl.font = UIFont.systemFont(ofSize: 30)
-        lbl.numberOfLines=2
-        lbl.translatesAutoresizingMaskIntoConstraints=false
-        return lbl
-    }()
-    
+ 
 
-    let btnQ1: UIButton = {
-        let btn = UIButton()
-        btn.setTitle("1", for: .normal)
-        btn.setTitleColor(UIColor.green, for: .normal)
-        btn.backgroundColor=UIColor.black
-        btn.layer.cornerRadius=15
-        btn.clipsToBounds=true
-        btn.translatesAutoresizingMaskIntoConstraints=false
-        return btn
-    }()
-    
-    let btnQ2: UIButton = {
-        let btn = UIButton()
-        btn.setTitle("2", for: .normal)
-        btn.setTitleColor(UIColor.green, for: .normal)
-        btn.backgroundColor=UIColor.black
-        btn.layer.cornerRadius=15
-        btn.clipsToBounds=true
-        btn.translatesAutoresizingMaskIntoConstraints=false
-        return btn
-    }()
-    
-    let btnQ3: UIButton = {
-        let btn = UIButton()
-        btn.setTitle("3", for: .normal)
-        btn.setTitleColor(UIColor.green, for: .normal)
-        btn.backgroundColor=UIColor.black
-        btn.layer.cornerRadius=15
-        btn.clipsToBounds=true
-        btn.translatesAutoresizingMaskIntoConstraints=false
-        return btn
-    }()
-    
-    
 }
 
 
