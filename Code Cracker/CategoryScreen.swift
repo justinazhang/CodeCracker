@@ -6,6 +6,9 @@
 //  Copyright © 2020 Justin Zhang Justin Kaufman. All rights reserved.
 //
 
+
+
+
 import UIKit
 
 class Categories: UIViewController {
@@ -26,6 +29,11 @@ class Categories: UIViewController {
         v.setCategory(cat: "Python")
         self.navigationController?.pushViewController(v, animated: true)
        
+    }
+    
+    @objc func btnBackAction() {
+        let v=ViewController()
+        self.navigationController?.pushViewController(v, animated: true)
     }
     
     @objc func btnJavaAction() {
@@ -65,15 +73,32 @@ class Categories: UIViewController {
         btnData.widthAnchor.constraint(equalToConstant: 175).isActive=true
         btnData.heightAnchor.constraint(equalToConstant: 80).isActive=true
         btnData.addTarget(self, action: #selector(btnDataAction), for: .touchUpInside)
+        self.view.addSubview(btnBack)
+        btnBack.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 40).isActive=true
+        btnBack.rightAnchor.constraint(equalTo: self.view.rightAnchor,constant: -30).isActive=true
+        btnBack.widthAnchor.constraint(equalToConstant: 30).isActive=true
+        btnBack.heightAnchor.constraint(equalToConstant: 30).isActive=true
+        btnBack.addTarget(self, action: #selector(btnBackAction), for: .touchUpInside)
     }
 
+    let btnBack: UIButton = {
+        let btn = UIButton()
+        btn.setTitle("X", for: .normal)
+        btn.setTitleColor(UIColor.black, for: .normal)
+        btn.backgroundColor=UIColor.darkGray
+        btn.layer.cornerRadius=15
+        btn.clipsToBounds=true
+        btn.translatesAutoresizingMaskIntoConstraints=false
+        return btn
+    }()
     
     let lblTitle: UILabel = {
         let lbl=UILabel()
+        let customFont = UIFont(name: "CamingoCode-Regular", size: 30)
         lbl.text="Choose a Category"
         lbl.textColor=UIColor.green
         lbl.textAlignment = .center
-        lbl.font = UIFont.systemFont(ofSize: 30)
+        lbl.font = customFont
         lbl.numberOfLines=2
         lbl.translatesAutoresizingMaskIntoConstraints=false
         return lbl
@@ -81,6 +106,9 @@ class Categories: UIViewController {
     
     let btnPython: UIButton = {
         let btn = UIButton()
+        let customFont = UIFont(name: "CamingoCode-Regular", size: 25)
+        let customLabel = UIButton()
+        btn.titleLabel?.font = customFont
         btn.setTitle("Python", for: .normal)
         btn.setTitleColor(UIColor.green, for: .normal)
         btn.backgroundColor=UIColor.black
@@ -92,6 +120,9 @@ class Categories: UIViewController {
     
     let btnJava: UIButton = {
         let btn = UIButton()
+        let customFont = UIFont(name: "CamingoCode-Regular", size: 25)
+        let customLabel = UIButton()
+        btn.titleLabel?.font = customFont
         btn.setTitle("Java", for: .normal)
         btn.setTitleColor(UIColor.green, for: .normal)
         btn.backgroundColor=UIColor.black
@@ -103,6 +134,9 @@ class Categories: UIViewController {
     
     let btnData: UIButton = {
         let btn = UIButton()
+        let customFont = UIFont(name: "CamingoCode-Regular", size: 20)
+        let customLabel = UIButton()
+        btn.titleLabel?.font = customFont
         btn.setTitle("Data Structures", for: .normal)
         btn.setTitleColor(UIColor.green, for: .normal)
         btn.backgroundColor=UIColor.black
@@ -113,4 +147,3 @@ class Categories: UIViewController {
     }()
     
 }
-

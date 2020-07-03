@@ -17,7 +17,6 @@
 		176ED13224A85F02000B99A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 176ED13024A85F02000B99A3 /* LaunchScreen.storyboard */; };
 		176ED13A24A85FA7000B99A3 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176ED13924A85FA7000B99A3 /* Questions.swift */; };
 		176ED13C24A85FC5000B99A3 /* Answers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176ED13B24A85FC5000B99A3 /* Answers.swift */; };
-		176ED13E24A85FE7000B99A3 /* EndScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176ED13D24A85FE7000B99A3 /* EndScreen.swift */; };
 		17FC060424ABC48E004B906E /* QuestionNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FC060324ABC48E004B906E /* QuestionNumber.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +33,6 @@
 		176ED13324A85F02000B99A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		176ED13924A85FA7000B99A3 /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 		176ED13B24A85FC5000B99A3 /* Answers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answers.swift; sourceTree = "<group>"; };
-		176ED13D24A85FE7000B99A3 /* EndScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndScreen.swift; sourceTree = "<group>"; };
 		17FC060324ABC48E004B906E /* QuestionNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionNumber.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,7 +83,6 @@
 				17FC060324ABC48E004B906E /* QuestionNumber.swift */,
 				176ED13924A85FA7000B99A3 /* Questions.swift */,
 				176ED13B24A85FC5000B99A3 /* Answers.swift */,
-				176ED13D24A85FE7000B99A3 /* EndScreen.swift */,
 				176ED12E24A85F02000B99A3 /* Assets.xcassets */,
 				176ED13024A85F02000B99A3 /* LaunchScreen.storyboard */,
 				176ED13324A85F02000B99A3 /* Info.plist */,
@@ -121,7 +118,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1150;
-				ORGANIZATIONNAME = "Justin Zhang Justin Kaufman";
+				ORGANIZATIONNAME = Roaz;
 				TargetAttributes = {
 					176ED12124A85F02000B99A3 = {
 						CreatedOnToolsVersion = 11.5;
@@ -166,7 +163,6 @@
 			files = (
 				176ED12A24A85F02000B99A3 /* ViewController.swift in Sources */,
 				17FC060424ABC48E004B906E /* QuestionNumber.swift in Sources */,
-				176ED13E24A85FE7000B99A3 /* EndScreen.swift in Sources */,
 				176ED13A24A85FA7000B99A3 /* Questions.swift in Sources */,
 				176ED12624A85F02000B99A3 /* AppDelegate.swift in Sources */,
 				17687ACE24A96FF2006CC0D9 /* CategoryScreen.swift in Sources */,

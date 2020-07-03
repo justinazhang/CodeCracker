@@ -3,7 +3,7 @@
 //  Code Cracker
 //
 //  Created by Justin Zhang on 6/27/20.
-//  Copyright © 2020 Justin Zhang Justin Kaufman. All rights reserved.
+//  Copyright © 2020 Roaz. All rights reserved.
 //
 
 import UIKit
@@ -16,6 +16,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.title="Code Cracker"
         self.view.backgroundColor=UIColor.darkGray //change
+        self.navigationController?.navigationBar.isHidden = true
         
         setupViews()
         

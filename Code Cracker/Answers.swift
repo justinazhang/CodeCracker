@@ -3,8 +3,9 @@
 //  Code Cracker
 //
 //  Created by Justin Zhang on 6/27/20.
-//  Copyright © 2020 Justin Zhang Justin Kaufman. All rights reserved.
+//  Copyright © 2020 Roaz. All rights reserved.
 //
+
 
 import UIKit
 
@@ -25,7 +26,6 @@ class QuizCVCell: UICollectionViewCell {
     var question: Question? {
         didSet {
             guard let unwrappedQue = question else { return }
-            //imgView.image = UIImage(named: unwrappedQue.imgName)
             lblQue.text = unwrappedQue.questionText
             btn1.setTitle(unwrappedQue.options[0], for: .normal)
             btn2.setTitle(unwrappedQue.options[1], for: .normal)
@@ -76,10 +76,10 @@ class QuizCVCell: UICollectionViewCell {
         lblQue.heightAnchor.constraint(equalToConstant: 150).isActive=true
         
         let btnWidth: CGFloat = 150
-        let btnHeight: CGFloat = 50
+        let btnHeight: CGFloat = 75
         btn1 = getButton(tag: 0)
         addSubview(btn1)
-        NSLayoutConstraint.activate([btn1.topAnchor.constraint(equalTo: lblQue.bottomAnchor, constant: 20), btn1.rightAnchor.constraint(equalTo: self.centerXAnchor, constant: -10), btn1.widthAnchor.constraint(equalToConstant: btnWidth), btn1.heightAnchor.constraint(equalToConstant: btnHeight)])
+        NSLayoutConstraint.activate([btn1.topAnchor.constraint(equalTo: lblQue.bottomAnchor, constant: 100), btn1.rightAnchor.constraint(equalTo: self.centerXAnchor, constant: -10), btn1.widthAnchor.constraint(equalToConstant: btnWidth), btn1.heightAnchor.constraint(equalToConstant: btnHeight)])
         btn1.addTarget(self, action: #selector(btnOptionAction), for: .touchUpInside)
         
         btn2 = getButton(tag: 1)
@@ -106,7 +106,7 @@ class QuizCVCell: UICollectionViewCell {
         btn.backgroundColor=UIColor.white
         btn.layer.borderWidth=1
         btn.layer.borderColor=UIColor.darkGray.cgColor
-        btn.layer.cornerRadius=5
+        btn.layer.cornerRadius=15
         btn.clipsToBounds=true
         btn.translatesAutoresizingMaskIntoConstraints=false
         return btn
@@ -135,4 +135,3 @@ class QuizCVCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 }
-

@@ -3,7 +3,7 @@
 //  Code Cracker
 //
 //  Created by Justin Zhang on 6/30/20.
-//  Copyright © 2020 Justin Zhang Justin Kaufman. All rights reserved.
+//  Copyright © 2020 Roaz. All rights reserved.
 //
 
 import UIKit
@@ -28,11 +28,22 @@ class QuestionNumber: UIViewController {
         self.navigationController?.pushViewController(v, animated: true)
     }
     
+    @objc func btnBackAction() {
+        let v=Categories()
+        self.navigationController?.pushViewController(v, animated: true)
+    }
+    
     func setCategory(cat:String) {
         category = cat
     }
     func setupViews() {
         createAllButtons()
+        self.view.addSubview(btnBack)
+        btnBack.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 40).isActive=true
+        btnBack.rightAnchor.constraint(equalTo: self.view.rightAnchor,constant: -30).isActive=true
+        btnBack.widthAnchor.constraint(equalToConstant: 30).isActive=true
+        btnBack.heightAnchor.constraint(equalToConstant: 30).isActive=true
+        btnBack.addTarget(self, action: #selector(btnBackAction), for: .touchUpInside)
     }
     
     func createButtonRow(startY:Int,firstButtonIndex:Int,sHeight:CGFloat,sWidth:CGFloat) {
@@ -58,6 +69,8 @@ class QuestionNumber: UIViewController {
         }
         
     }
+    
+    
     func createButtonRowHelper(prevButton:UIButton,firstIndex:Int,sHeight:CGFloat,sWidth:CGFloat) {
         var oldButton = prevButton
         for n in 1...4 {
@@ -87,11 +100,24 @@ class QuestionNumber: UIViewController {
             btn.layer.cornerRadius=15
             btn.clipsToBounds=true
             btn.translatesAutoresizingMaskIntoConstraints=false
+            let customFont = UIFont(name: "CamingoCode-Regular", size: 25)
+             btn.titleLabel?.font = customFont
             buttonList.append(btn)
             return btn
         }()
         return b
     }
+    
+    let btnBack: UIButton = {
+        let btn = UIButton()
+        btn.setTitle("X", for: .normal)
+        btn.setTitleColor(UIColor.black, for: .normal)
+        btn.backgroundColor=UIColor.darkGray
+        btn.layer.cornerRadius=15
+        btn.clipsToBounds=true
+        btn.translatesAutoresizingMaskIntoConstraints=false
+        return btn
+    }()
  
 
 }
