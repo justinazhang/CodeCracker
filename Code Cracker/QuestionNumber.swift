@@ -12,10 +12,21 @@ class QuestionNumber: UIViewController {
     
     var category:String = ""
     var buttonList = [UIButton]()
+    var scrollView: UIScrollView!
+    var oldView:UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title="Pick a Question"
         self.view.backgroundColor=UIColor.darkGray
+        let screenRect = UIScreen.main.bounds
+        let screenWidth = screenRect.size.width
+        let screenHeight = screenRect.size.height
+        scrollView = UIScrollView(frame: view.bounds)
+        scrollView.backgroundColor = UIColor.darkGray
+        scrollView.contentSize = self.view.bounds.size
+        scrollView.contentSize = CGSize(width: screenWidth, height: 3 * screenHeight/2.0)
+        self.view = scrollView
         createButtons()
         setupViews()
     }
@@ -37,19 +48,17 @@ class QuestionNumber: UIViewController {
         category = cat
     }
     func setupViews() {
-        createAllButtons()
         self.view.addSubview(btnBack)
-        btnBack.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 40).isActive=true
-        btnBack.rightAnchor.constraint(equalTo: self.view.rightAnchor,constant: -30).isActive=true
+        btnBack.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 30).isActive=true
+        btnBack.rightAnchor.constraint(equalTo: self.view.rightAnchor,constant:40).isActive=true
         btnBack.widthAnchor.constraint(equalToConstant: 30).isActive=true
         btnBack.heightAnchor.constraint(equalToConstant: 30).isActive=true
         btnBack.addTarget(self, action: #selector(btnBackAction), for: .touchUpInside)
+        createAllButtons()
     }
     
     func createButtonRow(startY:Int,firstButtonIndex:Int,sHeight:CGFloat,sWidth:CGFloat) {
         self.view.addSubview(buttonList[firstButtonIndex])
-        print(sHeight)
-        print(sWidth)
         buttonList[firstButtonIndex].topAnchor.constraint(equalTo: self.view.topAnchor, constant:CGFloat(sHeight/8+CGFloat(startY))).isActive=true
         buttonList[firstButtonIndex].leftAnchor.constraint(equalTo: self.view.leftAnchor,constant: sWidth/13).isActive=true
         buttonList[firstButtonIndex].widthAnchor.constraint(equalToConstant: sHeight/10).isActive=true
@@ -63,7 +72,7 @@ class QuestionNumber: UIViewController {
         let screenRect = UIScreen.main.bounds
         let screenWidth = screenRect.size.width
         let screenHeight = screenRect.size.height
-        for n in stride(from:0, to: 3 * screenWidth/2, by:screenWidth/3) {
+        for n in stride(from:0, to: 6 * screenWidth/2, by:screenWidth/3) {
             createButtonRow(startY:Int(n),firstButtonIndex:startIndex,sHeight:screenHeight,sWidth: screenWidth)
             startIndex += 6
         }
@@ -74,6 +83,7 @@ class QuestionNumber: UIViewController {
     func createButtonRowHelper(prevButton:UIButton,firstIndex:Int,sHeight:CGFloat,sWidth:CGFloat) {
         var oldButton = prevButton
         for n in 1...4 {
+
         self.view.addSubview(buttonList[n+firstIndex])
         buttonList[n+firstIndex].topAnchor.constraint(equalTo: oldButton.topAnchor).isActive=true
         buttonList[n+firstIndex].leftAnchor.constraint(equalTo: oldButton.leftAnchor,constant: sHeight/7).isActive=true
@@ -95,7 +105,6 @@ class QuestionNumber: UIViewController {
             let buttonTitle = String(index)
             let btn = UIButton()
             let customFont = UIFont(name: "CamingoCode-Regular", size: 25)
-            //let customLabel = UIButton()
             btn.titleLabel?.font = customFont
             btn.setTitle(buttonTitle, for: .normal)
             btn.setTitleColor(UIColor.green, for: .normal)
@@ -103,8 +112,7 @@ class QuestionNumber: UIViewController {
             btn.layer.cornerRadius=15
             btn.clipsToBounds=true
             btn.translatesAutoresizingMaskIntoConstraints=false
-            let customFont = UIFont(name: "CamingoCode-Regular", size: 25)
-             btn.titleLabel?.font = customFont
+            btn.titleLabel?.font = customFont
             buttonList.append(btn)
             return btn
         }()
