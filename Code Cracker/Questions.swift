@@ -131,6 +131,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     
     func setupViews() {
         myCollectionView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive=true
+        myCollectionView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
         myCollectionView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive=true
         myCollectionView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive=true
         myCollectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive=true
@@ -138,38 +139,48 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         self.view.addSubview(btnNext)
         btnNext.heightAnchor.constraint(equalToConstant: 50).isActive=true
         btnNext.widthAnchor.constraint(equalTo: self.view.widthAnchor,multiplier:0.5).isActive=true
-        btnNext.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive=true
-        btnNext.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive=true
+        btnNext.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
+        btnNext.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -25).isActive=true
         
     
     }
     
     let btnNext: UIButton = {
-        let btn=UIButton()
-        btn.setTitle("Next >", for: .normal)
-        btn.setTitleColor(UIColor.white, for: .normal)
-        btn.backgroundColor=UIColor.purple
-        btn.translatesAutoresizingMaskIntoConstraints=false
-        btn.addTarget(self, action: #selector(btnNextAction), for: .touchUpInside)
-        return btn
+            let btn = UIButton()
+            let customFont = UIFont(name: "CamingoCode-Regular", size: 25)
+            let customLabel = UIButton()
+            btn.titleLabel?.font = customFont
+            btn.setTitle("Next", for: .normal)
+            btn.setTitleColor(UIColor.green, for: .normal)
+            btn.backgroundColor=UIColor.black
+            btn.layer.cornerRadius=15
+            btn.clipsToBounds=true
+            btn.translatesAutoresizingMaskIntoConstraints=false
+            return btn
     }()
     
     let lblQueNumber: UILabel = {
         let lbl=UILabel()
+        let customFont = UIFont(name: "CamingoCode-Regular", size: 16)
+        let customLabel = UILabel()
+        customLabel.font = customFont
         lbl.text="0 / 0"
         lbl.textColor=UIColor.green
         lbl.textAlignment = .left
-        lbl.font = UIFont.systemFont(ofSize: 16)
+        lbl.font = customFont
         lbl.translatesAutoresizingMaskIntoConstraints=false
         return lbl
     }()
     
     let lblScore: UILabel = {
         let lbl=UILabel()
+        let customFont = UIFont(name: "CamingoCode-Regular", size: 16)
+        let customLabel = UILabel()
+        customLabel.font = customFont
         lbl.text="0 / 0"
         lbl.textColor=UIColor.gray
         lbl.textAlignment = .right
-        lbl.font = UIFont.systemFont(ofSize: 16)
+        lbl.font = customFont
         lbl.translatesAutoresizingMaskIntoConstraints=false
         return lbl
     }()

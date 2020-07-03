@@ -70,10 +70,11 @@ class Categories: UIViewController {
     
     let lblTitle: UILabel = {
         let lbl=UILabel()
+        let customFont = UIFont(name: "CamingoCode-Regular", size: 30)
         lbl.text="Choose a Category"
         lbl.textColor=UIColor.green
         lbl.textAlignment = .center
-        lbl.font = UIFont.systemFont(ofSize: 30)
+        lbl.font = customFont
         lbl.numberOfLines=2
         lbl.translatesAutoresizingMaskIntoConstraints=false
         return lbl
@@ -81,6 +82,9 @@ class Categories: UIViewController {
     
     let btnPython: UIButton = {
         let btn = UIButton()
+        let customFont = UIFont(name: "CamingoCode-Regular", size: 25)
+        let customLabel = UIButton()
+        btn.titleLabel?.font = customFont
         btn.setTitle("Python", for: .normal)
         btn.setTitleColor(UIColor.green, for: .normal)
         btn.backgroundColor=UIColor.black
@@ -92,6 +96,9 @@ class Categories: UIViewController {
     
     let btnJava: UIButton = {
         let btn = UIButton()
+        let customFont = UIFont(name: "CamingoCode-Regular", size: 25)
+        let customLabel = UIButton()
+        btn.titleLabel?.font = customFont
         btn.setTitle("Java", for: .normal)
         btn.setTitleColor(UIColor.green, for: .normal)
         btn.backgroundColor=UIColor.black
@@ -103,6 +110,9 @@ class Categories: UIViewController {
     
     let btnData: UIButton = {
         let btn = UIButton()
+        let customFont = UIFont(name: "CamingoCode-Regular", size: 20)
+        let customLabel = UIButton()
+        btn.titleLabel?.font = customFont
         btn.setTitle("Data Structures", for: .normal)
         btn.setTitleColor(UIColor.green, for: .normal)
         btn.backgroundColor=UIColor.black

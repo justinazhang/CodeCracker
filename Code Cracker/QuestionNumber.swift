@@ -14,7 +14,7 @@ class QuestionNumber: UIViewController {
     var buttonList = [UIButton]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title="Question Number Screen"
+        self.title="Pick a Question"
         self.view.backgroundColor=UIColor.darkGray
         createButtons()
         setupViews()
@@ -81,6 +81,9 @@ class QuestionNumber: UIViewController {
         let b: UIButton = {
             let buttonTitle = String(index)
             let btn = UIButton()
+            let customFont = UIFont(name: "CamingoCode-Regular", size: 25)
+            //let customLabel = UIButton()
+            btn.titleLabel?.font = customFont
             btn.setTitle(buttonTitle, for: .normal)
             btn.setTitleColor(UIColor.green, for: .normal)
             btn.backgroundColor=UIColor.black
