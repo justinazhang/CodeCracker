@@ -48,6 +48,7 @@ class QuizCVCell: UICollectionViewCell {
         btnsArray = [btn1, btn2, btn3, btn4]
     }
     
+    
     @objc func btnOptionAction(sender: UIButton) {
         guard let unwrappedQue = question else { return }
         if !unwrappedQue.isAnswered {
@@ -63,17 +64,21 @@ class QuizCVCell: UICollectionViewCell {
     }
     
     func setupViews() {
-        addSubview(imgView)
+        /*addSubview(imgView)
         imgView.topAnchor.constraint(equalTo: self.topAnchor, constant: 50).isActive=true
         imgView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive=true
         imgView.widthAnchor.constraint(equalToConstant: 150).isActive=true
-        imgView.heightAnchor.constraint(equalTo: imgView.widthAnchor).isActive=true
+        imgView.heightAnchor.constraint(equalTo: imgView.widthAnchor).isActive=true*/
+        var startIndex = 0
+        let screenRect = UIScreen.main.bounds
+        let screenWidth = screenRect.size.width
+        let screenHeight = screenRect.size.height
         
         addSubview(lblQue)
-        lblQue.topAnchor.constraint(equalTo: imgView.bottomAnchor).isActive=true
+        //lblQue.topAnchor.constraint(equalTo: imgView.bottomAnchor).isActive=true
         lblQue.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 12).isActive=true
         lblQue.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -12).isActive=true
-        lblQue.heightAnchor.constraint(equalToConstant: 150).isActive=true
+        lblQue.heightAnchor.constraint(equalToConstant: screenHeight/2).isActive=true
         
         let btnWidth: CGFloat = 150
         let btnHeight: CGFloat = 75
@@ -112,13 +117,13 @@ class QuizCVCell: UICollectionViewCell {
         return btn
     }
     
-    let imgView: UIImageView = {
+   /* let imgView: UIImageView = {
         let v=UIImageView()
         v.image = #imageLiteral(resourceName: "img2")
         v.contentMode = .scaleAspectFit
         v.translatesAutoresizingMaskIntoConstraints=false
         return v
-    }()
+    }()*/
     
     let lblQue: UILabel = {
         let lbl=UILabel()
