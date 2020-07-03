@@ -9,7 +9,7 @@
 import UIKit
 
 struct Question {
-    let imgName: String
+    //let imgName: String
     let questionText: String
     let options: [String]
     let correctAns: Int
@@ -26,6 +26,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     var start = 0;
     var window: UIWindow?
     var category: String = ""
+    
     
     
     override func viewDidLoad() {
@@ -57,18 +58,18 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         btnBack.heightAnchor.constraint(equalToConstant: 30).isActive=true
         btnBack.addTarget(self, action: #selector(btnBackAction), for: .touchUpInside)
         
-        let jv1 = Question(imgName: "img1", questionText: "What is java1 ?", options: ["2", "4", "8", "6"], correctAns: 1, wrongAns: -1, isAnswered: false)
-        let jv2 = Question(imgName: "img2", questionText: "What is java2 ?", options: ["9", "4", "3", "6"], correctAns: 3, wrongAns: -1, isAnswered: false)
-        let jv3 = Question(imgName: "img1", questionText: "What is java3 ?", options: ["2", "4", "3", "5"], correctAns: 2, wrongAns: -1, isAnswered: false)
-        let jv4 = Question(imgName: "img2", questionText: "What is 2 - 2 ?", options: ["2", "4", "1", "0"], correctAns: 3, wrongAns: -1, isAnswered: false)
-        let jv5 = Question(imgName: "img1", questionText: "What is 12 x 2 ?", options: ["24", "40", "26", "34"], correctAns: 0, wrongAns: -1, isAnswered: false)
-        let jv6 = Question(imgName: "img2", questionText: "What is the color of sky?", options: ["Violet", "Yellow", "Blue", "White"], correctAns: 2, wrongAns: -1, isAnswered: false)
-        let py1 = Question(imgName: "img1", questionText: "What is python1?", options: ["2", "4", "8", "6"], correctAns: 1, wrongAns: -1, isAnswered: false)
-        let py2 = Question(imgName: "img2", questionText: "What is python2 ?", options: ["9", "4", "3", "6"], correctAns: 3, wrongAns: -1, isAnswered: false)
-        let py3 = Question(imgName: "img1", questionText: "What is asdf3?", options: ["2", "4", "3", "5"], correctAns: 2, wrongAns: -1, isAnswered: false)
-        let py4 = Question(imgName: "img2", questionText: "What is 2 - 2asdf ?", options: ["2", "4", "1", "0"], correctAns: 3, wrongAns: -1, isAnswered: false)
-        let py5 = Question(imgName: "img1", questionText: "What is 12 x f2 ?", options: ["24", "40", "26", "34"], correctAns: 0, wrongAns: -1, isAnswered: false)
-        let py6 = Question(imgName: "img2", questionText: "What is the color of sky?", options: ["Violet", "Yellow", "Blue", "White"], correctAns: 2, wrongAns: -1, isAnswered: false)
+        let jv1 = Question(questionText: "What is java1 ?", options: ["2", "4", "8", "6"], correctAns: 1, wrongAns: -1, isAnswered: false)
+        let jv2 = Question(questionText: "What is java2 ?", options: ["9", "4", "3", "6"], correctAns: 3, wrongAns: -1, isAnswered: false)
+        let jv3 = Question(questionText: "What is java3 ?", options: ["2", "4", "3", "5"], correctAns: 2, wrongAns: -1, isAnswered: false)
+        let jv4 = Question(questionText: "What is 2 - 2 ?", options: ["2", "4", "1", "0"], correctAns: 3, wrongAns: -1, isAnswered: false)
+        let jv5 = Question(questionText: "What is 12 x 2 ?", options: ["24", "40", "26", "34"], correctAns: 0, wrongAns: -1, isAnswered: false)
+        let jv6 = Question(questionText: "What is the color of sky?", options: ["Violet", "Yellow", "Blue", "White"], correctAns: 2, wrongAns: -1, isAnswered: false)
+        let py1 = Question(questionText: "What is python1?", options: ["2", "4", "8", "6"], correctAns: 1, wrongAns: -1, isAnswered: false)
+        let py2 = Question(questionText: "What is python2 ?", options: ["9", "4", "3", "6"], correctAns: 3, wrongAns: -1, isAnswered: false)
+        let py3 = Question(questionText: "What is asdf3?", options: ["2", "4", "3", "5"], correctAns: 2, wrongAns: -1, isAnswered: false)
+        let py4 = Question(questionText: "What is 2 - 2asdf ?", options: ["2", "4", "1", "0"], correctAns: 3, wrongAns: -1, isAnswered: false)
+        let py5 = Question(questionText: "What is 12 x f2 ?", options: ["24", "40", "26", "34"], correctAns: 0, wrongAns: -1, isAnswered: false)
+        let py6 = Question(questionText: "What is the color of sky?", options: ["Violet", "Yellow", "Blue", "White"], correctAns: 2, wrongAns: -1, isAnswered: false)
         if category == "Python" {
             questionsArray = [py1, py2, py3, py4, py5, py6]
         }
@@ -145,6 +146,9 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func setupViews() {
+        let screenRect = UIScreen.main.bounds
+        let screenWidth = screenRect.size.width
+        let screenHeight = screenRect.size.height
         myCollectionView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive=true
         myCollectionView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
         myCollectionView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive=true
@@ -155,9 +159,8 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         btnNext.heightAnchor.constraint(equalToConstant: 50).isActive=true
         btnNext.widthAnchor.constraint(equalTo: self.view.widthAnchor,multiplier:0.5).isActive=true
         btnNext.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
-        btnNext.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -25).isActive=true
-        
-    
+        btnNext.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -10).isActive=true
+      
     }
     
     let btnNext: UIButton = {

@@ -103,7 +103,7 @@ class QuestionNumber: UIViewController {
             btn.layer.cornerRadius=15
             btn.clipsToBounds=true
             btn.translatesAutoresizingMaskIntoConstraints=false
-            let customFont = UIFont(name: "CamingoCode-Regular", size: 25)
+            //let customFont = UIFont(name: "CamingoCode-Regular", size: 25)
              btn.titleLabel?.font = customFont
             buttonList.append(btn)
             return btn
