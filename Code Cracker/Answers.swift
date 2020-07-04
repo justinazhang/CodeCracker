@@ -64,11 +64,6 @@ class QuizCVCell: UICollectionViewCell {
     }
     
     func setupViews() {
-        /*addSubview(imgView)
-        imgView.topAnchor.constraint(equalTo: self.topAnchor, constant: 50).isActive=true
-        imgView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive=true
-        imgView.widthAnchor.constraint(equalToConstant: 150).isActive=true
-        imgView.heightAnchor.constraint(equalTo: imgView.widthAnchor).isActive=true*/
         var startIndex = 0
         let screenRect = UIScreen.main.bounds
         let screenWidth = screenRect.size.width
@@ -117,13 +112,7 @@ class QuizCVCell: UICollectionViewCell {
         return btn
     }
     
-   /* let imgView: UIImageView = {
-        let v=UIImageView()
-        v.image = #imageLiteral(resourceName: "img2")
-        v.contentMode = .scaleAspectFit
-        v.translatesAutoresizingMaskIntoConstraints=false
-        return v
-    }()*/
+
     
     let lblQue: UILabel = {
         let lbl=UILabel()

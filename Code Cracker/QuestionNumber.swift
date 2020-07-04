@@ -10,7 +10,7 @@ import UIKit
 
 class QuestionNumber: UIViewController {
     
-    var category:String = ""
+    var category:String = "asdf"
     var buttonList = [UIButton]()
     var scrollView: UIScrollView!
     var oldView:UIScrollView!
@@ -34,6 +34,7 @@ class QuestionNumber: UIViewController {
     @objc func btnfun(sender: UIButton) {
         let questionNum = Int(sender.currentTitle!)! - 1
         let v=QuizVC()
+        print(category)
         v.setQuestionStart(questionNum:questionNum)
         v.setCategory(cat:category)
         self.navigationController?.pushViewController(v, animated: true)
@@ -107,7 +108,18 @@ class QuestionNumber: UIViewController {
             let customFont = UIFont(name: "CamingoCode-Regular", size: 25)
             btn.titleLabel?.font = customFont
             btn.setTitle(buttonTitle, for: .normal)
-            btn.setTitleColor(UIColor.green, for: .normal)
+            btn.setTitleColor(UIColor.red, for: .normal)
+            print(questionsAnsweredPython)
+    
+            if (category == "Python" && questionsAnsweredPython.contains(index)) {
+                btn.setTitleColor(UIColor.green, for: .normal)
+            }
+            else if (category == "Java" && questionsAnsweredJava.contains(index)) {
+                btn.setTitleColor(UIColor.green, for: .normal)
+            }
+            else if (category == "Data" && questionsAnsweredData.contains(index)) {
+                btn.setTitleColor(UIColor.green, for: .normal)
+            }
             btn.backgroundColor=UIColor.black
             btn.layer.cornerRadius=15
             btn.clipsToBounds=true
