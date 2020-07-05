@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		064ABC7A24ABB8050019A2AB /* CamingoCode-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 064ABC7924ABB8050019A2AB /* CamingoCode-Regular.ttf */; };
 		064ABC7E24ABBBA40019A2AB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064ABC7D24ABBBA40019A2AB /* Constants.swift */; };
+		173ABAAA24B17D2C0006DB06 /* SaveLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173ABAA924B17D2C0006DB06 /* SaveLoad.swift */; };
 		17687ACE24A96FF2006CC0D9 /* CategoryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17687ACD24A96FF2006CC0D9 /* CategoryScreen.swift */; };
 		176ED12624A85F02000B99A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176ED12524A85F02000B99A3 /* AppDelegate.swift */; };
 		176ED12824A85F02000B99A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176ED12724A85F02000B99A3 /* SceneDelegate.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		064ABC7924ABB8050019A2AB /* CamingoCode-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CamingoCode-Regular.ttf"; sourceTree = "<group>"; };
 		064ABC7D24ABBBA40019A2AB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		173ABAA924B17D2C0006DB06 /* SaveLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveLoad.swift; sourceTree = "<group>"; };
 		17687ACD24A96FF2006CC0D9 /* CategoryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryScreen.swift; sourceTree = "<group>"; };
 		176ED12224A85F02000B99A3 /* Code Cracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Code Cracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		176ED12524A85F02000B99A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				17FC060324ABC48E004B906E /* QuestionNumber.swift */,
 				176ED13924A85FA7000B99A3 /* Quiz.swift */,
 				17BC587D24AFEDBF00F735A9 /* Questions.swift */,
+				173ABAA924B17D2C0006DB06 /* SaveLoad.swift */,
 				176ED13B24A85FC5000B99A3 /* Answers.swift */,
 				176ED12E24A85F02000B99A3 /* Assets.xcassets */,
 				176ED13024A85F02000B99A3 /* LaunchScreen.storyboard */,
@@ -168,6 +171,7 @@
 				176ED12A24A85F02000B99A3 /* ViewController.swift in Sources */,
 				17FC060424ABC48E004B906E /* QuestionNumber.swift in Sources */,
 				176ED13A24A85FA7000B99A3 /* Quiz.swift in Sources */,
+				173ABAAA24B17D2C0006DB06 /* SaveLoad.swift in Sources */,
 				176ED12624A85F02000B99A3 /* AppDelegate.swift in Sources */,
 				17687ACE24A96FF2006CC0D9 /* CategoryScreen.swift in Sources */,
 				176ED13C24A85FC5000B99A3 /* Answers.swift in Sources */,

@@ -34,7 +34,6 @@ class QuestionNumber: UIViewController {
     @objc func btnfun(sender: UIButton) {
         let questionNum = Int(sender.currentTitle!)! - 1
         let v=QuizVC()
-        print(category)
         v.setQuestionStart(questionNum:questionNum)
         v.setCategory(cat:category)
         self.navigationController?.pushViewController(v, animated: true)
@@ -109,8 +108,6 @@ class QuestionNumber: UIViewController {
             btn.titleLabel?.font = customFont
             btn.setTitle(buttonTitle, for: .normal)
             btn.setTitleColor(UIColor.red, for: .normal)
-            print(questionsAnsweredPython)
-    
             if (category == "Python" && questionsAnsweredPython.contains(index)) {
                 btn.setTitleColor(UIColor.green, for: .normal)
             }

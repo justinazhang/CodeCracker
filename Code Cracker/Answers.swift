@@ -64,9 +64,8 @@ class QuizCVCell: UICollectionViewCell {
     }
     
     func setupViews() {
-        var startIndex = 0
         let screenRect = UIScreen.main.bounds
-        let screenWidth = screenRect.size.width
+        let _ = screenRect.size.width
         let screenHeight = screenRect.size.height
         
         addSubview(lblQue)
@@ -116,7 +115,7 @@ class QuizCVCell: UICollectionViewCell {
     
     let lblQue: UILabel = {
         let lbl=UILabel()
-        lbl.text="This is a question and you have to answer it?"
+        lbl.text="Q"
         lbl.textColor=UIColor.black
         lbl.textAlignment = .center
         lbl.font = UIFont.systemFont(ofSize: 16)

@@ -106,7 +106,6 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         let w = myCollectionView.bounds.size.width
         let currentPage = Int(ceil(x/w))
         if currentPage < questionsArray.count {
-            lblQueNumber.text = "Question: \(currentPage+1) / \(questionsArray.count)"
             currentQuestionNumber = currentPage + 1
         }
     }
@@ -143,6 +142,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     let btnNext: UIButton = {
+        
             let btn = UIButton()
             let customFont = UIFont(name: "CamingoCode-Regular", size: 25)
             let customLabel = UIButton()
@@ -157,31 +157,6 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
             return btn
     }()
     
-    let lblQueNumber: UILabel = {
-        let lbl=UILabel()
-        let customFont = UIFont(name: "CamingoCode-Regular", size: 16)
-        let customLabel = UILabel()
-        customLabel.font = customFont
-        lbl.text="0 / 0"
-        lbl.textColor=UIColor.green
-        lbl.textAlignment = .left
-        lbl.font = customFont
-        lbl.translatesAutoresizingMaskIntoConstraints=false
-        return lbl
-    }()
-    
-    let lblScore: UILabel = {
-        let lbl=UILabel()
-        let customFont = UIFont(name: "CamingoCode-Regular", size: 16)
-        let customLabel = UILabel()
-        customLabel.font = customFont
-        lbl.text="0 / 0"
-        lbl.textColor=UIColor.gray
-        lbl.textAlignment = .right
-        lbl.font = customFont
-        lbl.translatesAutoresizingMaskIntoConstraints=false
-        return lbl
-    }()
 }
 
 extension QuizVC: QuizCVCellDelegate {
@@ -190,14 +165,17 @@ extension QuizVC: QuizCVCellDelegate {
         guard let index = centerIndex else { return }
         questionsArray[index.item].isAnswered=true
         if category == "Python" {
-            questionsAnsweredPython.append(currentQuestionNumber)
+            questionsAnsweredPython.append(questionsArray[index.item].quesNum)
         }
         else if category == "Java" {
-            questionsAnsweredJava.append(currentQuestionNumber)
+
+            questionsAnsweredJava.append(questionsArray[index.item].quesNum)
         }
         else if category == "Data" {
-            questionsAnsweredData.append(currentQuestionNumber)
+            questionsAnsweredData.append(questionsArray[index.item].quesNum)
         }
+        let saver = Save()
+        saver.saveArray()
         if questionsArray[index.item].correctAns != btnIndex {
             questionsArray[index.item].wrongAns = btnIndex
             score -= 1

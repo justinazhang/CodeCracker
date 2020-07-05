@@ -17,7 +17,8 @@ class ViewController: UIViewController {
         self.title="Code Cracker"
         self.view.backgroundColor=UIColor.darkGray //change
         self.navigationController?.navigationBar.isHidden = true
-        
+        let saver = Save()
+        saver.loadArray()
         setupViews()
         
     }
