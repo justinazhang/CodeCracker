@@ -41,9 +41,10 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         myCollectionView.backgroundColor=UIColor.darkGray //change
         myCollectionView.isPagingEnabled = false
         myCollectionView.isScrollEnabled = false
-
+        
         self.view.addSubview(myCollectionView)
         self.view.addSubview(btnBack)
+        
         btnBack.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 40).isActive=true
         btnBack.rightAnchor.constraint(equalTo: self.view.rightAnchor,constant: -30).isActive=true
         btnBack.widthAnchor.constraint(equalToConstant: 30).isActive=true
@@ -104,6 +105,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     }
 
     func setQuestionNumber() {
+        
         let x = myCollectionView.contentOffset.x
         let w = myCollectionView.bounds.size.width
         let currentPage = Int(ceil(x/w))
@@ -116,10 +118,10 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         if currentQuestionNumber != questionsArray.count {
             myCollectionView.isScrollEnabled = true
             let collectionBounds = self.myCollectionView.bounds
-                   var contentOffset: CGFloat = 0
-                   contentOffset = CGFloat(floor(self.myCollectionView.contentOffset.x + collectionBounds.size.width))
-                   currentQuestionNumber += currentQuestionNumber >= questionsArray.count + start ? 0 : 1
-                   self.moveToFrame(contentOffset: contentOffset)
+            var contentOffset: CGFloat = 0
+            contentOffset = CGFloat(floor(self.myCollectionView.contentOffset.x + collectionBounds.size.width))
+            currentQuestionNumber += currentQuestionNumber >= questionsArray.count + start ? 0 : 1
+            self.moveToFrame(contentOffset: contentOffset)
         }
         myCollectionView.isPagingEnabled = false
         myCollectionView.isScrollEnabled = false
@@ -127,6 +129,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     }
 
     func moveToFrame(contentOffset : CGFloat) {
+        myCollectionView.contentOffset.y = 0
         let frame: CGRect = CGRect(x : contentOffset ,y : self.myCollectionView.contentOffset.y ,width : self.myCollectionView.frame.width,height : self.myCollectionView.frame.height)
         self.myCollectionView.scrollRectToVisible(frame, animated: true)
     }
