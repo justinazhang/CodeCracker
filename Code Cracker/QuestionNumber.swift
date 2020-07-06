@@ -25,7 +25,7 @@ class QuestionNumber: UIViewController {
         scrollView = UIScrollView(frame: view.bounds)
         scrollView.backgroundColor = UIColor.darkGray
         scrollView.contentSize = self.view.bounds.size
-        scrollView.contentSize = CGSize(width: screenWidth, height: 3 * screenHeight/2.0)
+        scrollView.contentSize = CGSize(width: screenWidth, height: 3 * screenHeight/2.0) //scroll height
         self.view = scrollView
         createButtons()
         setupViews()
@@ -60,9 +60,9 @@ class QuestionNumber: UIViewController {
     func createButtonRow(startY:Int,firstButtonIndex:Int,sHeight:CGFloat,sWidth:CGFloat) {
         self.view.addSubview(buttonList[firstButtonIndex])
         buttonList[firstButtonIndex].topAnchor.constraint(equalTo: self.view.topAnchor, constant:CGFloat(sHeight/8+CGFloat(startY))).isActive=true
-        buttonList[firstButtonIndex].leftAnchor.constraint(equalTo: self.view.leftAnchor,constant: sWidth/13).isActive=true
-        buttonList[firstButtonIndex].widthAnchor.constraint(equalToConstant: sHeight/10).isActive=true
-        buttonList[firstButtonIndex].heightAnchor.constraint(equalToConstant: sHeight/10).isActive=true
+        buttonList[firstButtonIndex].leftAnchor.constraint(equalTo: self.view.leftAnchor,constant: sWidth/13).isActive=true //starting left point of the button row
+        buttonList[firstButtonIndex].widthAnchor.constraint(equalToConstant: sHeight/10).isActive=true //width of button
+        buttonList[firstButtonIndex].heightAnchor.constraint(equalToConstant: sHeight/10).isActive=true //height of button
         buttonList[firstButtonIndex].addTarget(self, action: #selector(btnfun), for: .touchUpInside)
         createButtonRowHelper(prevButton:buttonList[firstButtonIndex],firstIndex:firstButtonIndex,sHeight:sHeight,sWidth: sWidth)
     }
