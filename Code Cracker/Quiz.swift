@@ -142,7 +142,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         btnNext.heightAnchor.constraint(equalToConstant: 50).isActive=true
         btnNext.widthAnchor.constraint(equalTo: self.view.widthAnchor,multiplier:0.5).isActive=true
         btnNext.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
-        btnNext.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -10).isActive=true
+        btnNext.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -40).isActive=true
 
     }
 

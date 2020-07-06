@@ -10,7 +10,7 @@ import UIKit
 
 class QuestionNumber: UIViewController {
     
-    var category:String = "asdf"
+    var category:String = ""
     var buttonList = [UIButton]()
     var scrollView: UIScrollView!
     var oldView:UIScrollView!
