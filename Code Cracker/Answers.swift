@@ -33,9 +33,9 @@ class QuizCVCell: UICollectionViewCell {
             btn4.setTitle(unwrappedQue.options[3], for: .normal)
             
             if unwrappedQue.isAnswered {
-                btnsArray[unwrappedQue.correctAns].backgroundColor=UIColor.green
+                btnsArray[unwrappedQue.correctAns].setTitleColor(UIColor.green, for: .normal)
                 if unwrappedQue.wrongAns >= 0 {
-                    btnsArray[unwrappedQue.wrongAns].backgroundColor=UIColor.red
+                    btnsArray[unwrappedQue.wrongAns].setTitleColor(UIColor.red, for: .normal)
                 }
             }
         }
@@ -57,16 +57,14 @@ class QuizCVCell: UICollectionViewCell {
     }
     
     override func prepareForReuse() {
-        btn1.backgroundColor=UIColor.white
-        btn2.backgroundColor=UIColor.white
-        btn3.backgroundColor=UIColor.white
-        btn4.backgroundColor=UIColor.white
+        btn1.setTitleColor(UIColor.white, for: .normal)
+        btn2.setTitleColor(UIColor.white, for: .normal)
+        btn3.setTitleColor(UIColor.white, for: .normal)
+        btn4.setTitleColor(UIColor.white, for: .normal)
     }
     
     func setupViews() {
-        let screenRect = UIScreen.main.bounds
-        let _ = screenRect.size.width
-        let screenHeight = screenRect.size.height
+
         
         addSubview(lblQue)
         lblQue.topAnchor.constraint(equalTo: self.topAnchor, constant: 50).isActive=true
@@ -101,8 +99,8 @@ class QuizCVCell: UICollectionViewCell {
         let btn=UIButton()
         btn.tag=tag
         btn.setTitle("Option", for: .normal)
-        btn.setTitleColor(UIColor.black, for: .normal)
-        btn.backgroundColor=UIColor.white
+        btn.setTitleColor(UIColor.white, for: .normal)
+        btn.backgroundColor=UIColor.black
         btn.layer.borderWidth=1
         btn.layer.borderColor=UIColor.darkGray.cgColor
         btn.layer.cornerRadius=15

@@ -38,6 +38,8 @@ class QuestionNumber: UIViewController {
         self.navigationController?.pushViewController(v, animated: true)
     }
     
+     
+    
     @objc func btnBackAction() {
         let v=Categories()
         self.navigationController?.pushViewController(v, animated: true)

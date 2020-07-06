@@ -43,14 +43,6 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         myCollectionView.isScrollEnabled = false
         
         self.view.addSubview(myCollectionView)
-        self.view.addSubview(btnBack)
-        
-        btnBack.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 40).isActive=true
-        btnBack.rightAnchor.constraint(equalTo: self.view.rightAnchor,constant: -30).isActive=true
-        btnBack.widthAnchor.constraint(equalToConstant: 30).isActive=true
-        btnBack.heightAnchor.constraint(equalToConstant: 30).isActive=true
-        btnBack.addTarget(self, action: #selector(btnBackAction), for: .touchUpInside)
-
         let v = Questions()
         if category == "Python" {
             questionsArray = v.getPythonArray()
@@ -103,7 +95,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     func setQuestionStart(questionNum:Int) {
         start = questionNum
     }
-
+    
     func setQuestionNumber() {
         
         let x = myCollectionView.contentOffset.x
@@ -123,10 +115,22 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
             currentQuestionNumber += currentQuestionNumber >= questionsArray.count + start ? 0 : 1
             self.moveToFrame(contentOffset: contentOffset)
         }
+        btnExplain.backgroundColor=UIColor.gray
+        btnExplain.setTitleColor(UIColor.black, for: .normal)
+        btnExplain.isEnabled = false;
         myCollectionView.isPagingEnabled = false
         myCollectionView.isScrollEnabled = false
 
     }
+    
+    @objc func btnExplainAction() {
+    let centerIndex = getCenterIndex()
+    guard let index = centerIndex else { return }
+     var popUpWindow: PopUpWindow!
+     popUpWindow = PopUpWindow(title: "", text: questionsArray[index.item].explain, buttontext: "Ok")
+    self.present(popUpWindow, animated: true, completion: nil)
+
+     }
 
     func moveToFrame(contentOffset : CGFloat) {
         myCollectionView.contentOffset.y = 0
@@ -146,6 +150,27 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         btnNext.widthAnchor.constraint(equalTo: self.view.widthAnchor,multiplier:0.5).isActive=true
         btnNext.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
         btnNext.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -40).isActive=true
+        self.view.addSubview(btnExplain)
+        btnExplain.heightAnchor.constraint(equalToConstant: 50).isActive=true
+        btnExplain.widthAnchor.constraint(equalToConstant:50).isActive=true
+        btnExplain.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant:-20).isActive=true
+        btnExplain.bottomAnchor.constraint(equalTo: btnNext.bottomAnchor).isActive=true
+        btnExplain.backgroundColor=UIColor.gray
+        btnExplain.setTitleColor(UIColor.black, for: .normal)
+        btnExplain.isEnabled = false;
+        self.view.addSubview(btnBack)
+        btnBack.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 40).isActive=true
+        btnBack.rightAnchor.constraint(equalTo: self.view.rightAnchor,constant: -30).isActive=true
+        btnBack.widthAnchor.constraint(equalToConstant: 30).isActive=true
+        btnBack.heightAnchor.constraint(equalToConstant: 30).isActive=true
+        btnBack.addTarget(self, action: #selector(btnBackAction), for: .touchUpInside)
+        
+        if currentQuestionNumber == questionsArray.count {
+                   btnNext.backgroundColor=UIColor.gray
+                   btnNext.setTitleColor(UIColor.black, for: .normal)
+                   btnNext.isEnabled = false;
+               }
+        
 
     }
 
@@ -164,6 +189,22 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
             btn.addTarget(self, action: #selector(btnNextAction), for: .touchUpInside)
             return btn
     }()
+    
+    let btnExplain: UIButton = {
+
+            let btn = UIButton()
+            let customFont = UIFont(name: "CamingoCode-Regular", size: 25)
+            let customLabel = UIButton()
+            btn.titleLabel?.font = customFont
+            btn.setTitle("?", for: .normal)
+            btn.setTitleColor(UIColor.green, for: .normal)
+            btn.backgroundColor=UIColor.black
+            btn.layer.cornerRadius=15
+            btn.clipsToBounds=true
+            btn.translatesAutoresizingMaskIntoConstraints=false
+            btn.addTarget(self, action: #selector(btnExplainAction), for: .touchUpInside)
+            return btn
+    }()
 
 }
 
@@ -172,6 +213,9 @@ extension QuizVC: QuizCVCellDelegate {
         let centerIndex = getCenterIndex()
         guard let index = centerIndex else { return }
         questionsArray[index.item].isAnswered=true
+        btnExplain.backgroundColor=UIColor.black
+        btnExplain.setTitleColor(UIColor.green, for: .normal)
+        btnExplain.isEnabled = true;
         if category == "Python" {
             questionsAnsweredPython.append(questionsArray[index.item].quesNum)
         }

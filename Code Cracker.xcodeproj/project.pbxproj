@@ -18,6 +18,7 @@
 		176ED13224A85F02000B99A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 176ED13024A85F02000B99A3 /* LaunchScreen.storyboard */; };
 		176ED13A24A85FA7000B99A3 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176ED13924A85FA7000B99A3 /* Quiz.swift */; };
 		176ED13C24A85FC5000B99A3 /* Answers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176ED13B24A85FC5000B99A3 /* Answers.swift */; };
+		1777B49124B3ABA5005E03A0 /* Explaination .swift in Sources */ = {isa = PBXBuildFile; fileRef = 1777B49024B3ABA5005E03A0 /* Explaination .swift */; };
 		17BC587E24AFEDBF00F735A9 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BC587D24AFEDBF00F735A9 /* Questions.swift */; };
 		17FC060424ABC48E004B906E /* QuestionNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FC060324ABC48E004B906E /* QuestionNumber.swift */; };
 /* End PBXBuildFile section */
@@ -36,6 +37,7 @@
 		176ED13324A85F02000B99A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		176ED13924A85FA7000B99A3 /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		176ED13B24A85FC5000B99A3 /* Answers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answers.swift; sourceTree = "<group>"; };
+		1777B49024B3ABA5005E03A0 /* Explaination .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Explaination .swift"; sourceTree = "<group>"; };
 		17BC587D24AFEDBF00F735A9 /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 		17FC060324ABC48E004B906E /* QuestionNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionNumber.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +94,7 @@
 				176ED12E24A85F02000B99A3 /* Assets.xcassets */,
 				176ED13024A85F02000B99A3 /* LaunchScreen.storyboard */,
 				176ED13324A85F02000B99A3 /* Info.plist */,
+				1777B49024B3ABA5005E03A0 /* Explaination .swift */,
 			);
 			path = "Code Cracker";
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1777B49124B3ABA5005E03A0 /* Explaination .swift in Sources */,
 				17BC587E24AFEDBF00F735A9 /* Questions.swift in Sources */,
 				176ED12A24A85F02000B99A3 /* ViewController.swift in Sources */,
 				17FC060424ABC48E004B906E /* QuestionNumber.swift in Sources */,
