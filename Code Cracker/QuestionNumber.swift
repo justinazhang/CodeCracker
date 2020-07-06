@@ -24,8 +24,7 @@ class QuestionNumber: UIViewController {
         let screenHeight = screenRect.size.height
         scrollView = UIScrollView(frame: view.bounds)
         scrollView.backgroundColor = UIColor.darkGray
-        scrollView.contentSize = self.view.bounds.size
-        scrollView.contentSize = CGSize(width: screenWidth, height: 3 * screenHeight/2.0) //scroll height
+        scrollView.contentSize = CGSize(width: screenWidth, height: 2.1 * screenHeight) //scroll height
         self.view = scrollView
         createButtons()
         setupViews()
@@ -61,8 +60,8 @@ class QuestionNumber: UIViewController {
         self.view.addSubview(buttonList[firstButtonIndex])
         buttonList[firstButtonIndex].topAnchor.constraint(equalTo: self.view.topAnchor, constant:CGFloat(sHeight/8+CGFloat(startY))).isActive=true
         buttonList[firstButtonIndex].leftAnchor.constraint(equalTo: self.view.leftAnchor,constant: sWidth/13).isActive=true //starting left point of the button row
-        buttonList[firstButtonIndex].widthAnchor.constraint(equalToConstant: sHeight/10).isActive=true //width of button
-        buttonList[firstButtonIndex].heightAnchor.constraint(equalToConstant: sHeight/10).isActive=true //height of button
+        buttonList[firstButtonIndex].widthAnchor.constraint(equalToConstant: sWidth/4).isActive=true //width of button
+        buttonList[firstButtonIndex].heightAnchor.constraint(equalToConstant: sWidth/4).isActive=true //height of button
         buttonList[firstButtonIndex].addTarget(self, action: #selector(btnfun), for: .touchUpInside)
         createButtonRowHelper(prevButton:buttonList[firstButtonIndex],firstIndex:firstButtonIndex,sHeight:sHeight,sWidth: sWidth)
     }
@@ -72,9 +71,13 @@ class QuestionNumber: UIViewController {
         let screenRect = UIScreen.main.bounds
         let screenWidth = screenRect.size.width
         let screenHeight = screenRect.size.height
-        for n in stride(from:0, to: 6 * screenWidth/2, by:screenWidth/3) {
+        var rowNums = 0
+        for n in stride(from:0, to: 3 * screenHeight, by:screenHeight/5) {
+            if (rowNums <= 9) {
             createButtonRow(startY:Int(n),firstButtonIndex:startIndex,sHeight:screenHeight,sWidth: screenWidth)
             startIndex += 6
+            }
+            rowNums += 1
         }
         
     }
@@ -86,7 +89,7 @@ class QuestionNumber: UIViewController {
 
         self.view.addSubview(buttonList[n+firstIndex])
         buttonList[n+firstIndex].topAnchor.constraint(equalTo: oldButton.topAnchor).isActive=true
-        buttonList[n+firstIndex].leftAnchor.constraint(equalTo: oldButton.leftAnchor,constant: sHeight/7).isActive=true
+            buttonList[n+firstIndex].leftAnchor.constraint(equalTo: oldButton.leftAnchor,constant: sWidth/3.3).isActive=true
         buttonList[n+firstIndex].widthAnchor.constraint(equalTo: oldButton.widthAnchor).isActive=true
         buttonList[n+firstIndex].heightAnchor.constraint(equalTo: oldButton.heightAnchor).isActive=true
         buttonList[n+firstIndex].addTarget(self, action: #selector(btnfun), for: .touchUpInside)
@@ -95,7 +98,7 @@ class QuestionNumber: UIViewController {
     }
     
     func createButtons() {
-        for n in 1...28 {
+        for n in 1...31 {
             buttonList.append(createButton(index:n))
         }
     }
