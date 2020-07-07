@@ -106,7 +106,7 @@ class Categories: UIViewController {
     
     let btnPython: UIButton = {
         let btn = UIButton()
-        let customFont = UIFont(name: "CamingoCode-Regular", size: 25)
+        let customFont = UIFont(name: "CamingoCode-Regular", size: 30)
         let customLabel = UIButton()
         btn.titleLabel?.font = customFont
         btn.setTitle("Python", for: .normal)
@@ -120,7 +120,7 @@ class Categories: UIViewController {
     
     let btnJava: UIButton = {
         let btn = UIButton()
-        let customFont = UIFont(name: "CamingoCode-Regular", size: 25)
+        let customFont = UIFont(name: "CamingoCode-Regular", size: 30)
         let customLabel = UIButton()
         btn.titleLabel?.font = customFont
         btn.setTitle("Java", for: .normal)
@@ -134,7 +134,7 @@ class Categories: UIViewController {
     
     let btnData: UIButton = {
         let btn = UIButton()
-        let customFont = UIFont(name: "CamingoCode-Regular", size: 20)
+        let customFont = UIFont(name: "CamingoCode-Regular", size: 28)
         let customLabel = UIButton()
         btn.titleLabel?.font = customFont
         btn.setTitle("Data Structures", for: .normal)
