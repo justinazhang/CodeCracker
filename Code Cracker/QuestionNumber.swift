@@ -24,9 +24,15 @@ class QuestionNumber: UIViewController {
         let screenHeight = screenRect.size.height
         scrollView = UIScrollView(frame: view.bounds)
         scrollView.backgroundColor = UIColor.darkGray
-        scrollView.contentSize = CGSize(width: screenWidth, height: 2.1 * screenHeight) //scroll height
+        scrollView.contentSize = CGSize(width: screenWidth, height: 2.1 * screenHeight)
         self.view = scrollView
         createButtons()
+        self.view.addSubview(btnBack)
+        btnBack.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 5).isActive=true
+        btnBack.leftAnchor.constraint(equalTo: self.view.rightAnchor,constant:screenWidth - 60).isActive=true
+        btnBack.widthAnchor.constraint(equalToConstant: 30).isActive=true
+        btnBack.heightAnchor.constraint(equalToConstant: 30).isActive=true
+        btnBack.addTarget(self, action: #selector(btnBackAction), for: .touchUpInside)
         setupViews()
     }
     
@@ -49,12 +55,7 @@ class QuestionNumber: UIViewController {
         category = cat
     }
     func setupViews() {
-        self.view.addSubview(btnBack)
-        btnBack.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 30).isActive=true
-        btnBack.rightAnchor.constraint(equalTo: self.view.rightAnchor,constant:40).isActive=true
-        btnBack.widthAnchor.constraint(equalToConstant: 30).isActive=true
-        btnBack.heightAnchor.constraint(equalToConstant: 30).isActive=true
-        btnBack.addTarget(self, action: #selector(btnBackAction), for: .touchUpInside)
+        
         createAllButtons()
     }
     
