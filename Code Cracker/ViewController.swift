@@ -40,8 +40,8 @@ class ViewController: UIViewController {
         lblTitle.heightAnchor.constraint(equalToConstant: 80).isActive=true //change
         
         self.view.addSubview(btnGetStarted)
-        btnGetStarted.heightAnchor.constraint(equalToConstant: 80).isActive=true //change
-        btnGetStarted.widthAnchor.constraint(equalToConstant: 175).isActive=true //change
+        btnGetStarted.heightAnchor.constraint(equalToConstant: 100).isActive=true //change
+        btnGetStarted.widthAnchor.constraint(equalToConstant: 200).isActive=true //change
         btnGetStarted.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
         btnGetStarted.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 50).isActive=true
     }
@@ -62,7 +62,7 @@ class ViewController: UIViewController {
     
     let btnGetStarted: UIButton = {
         let btn=UIButton()
-        let customFont = UIFont(name: "CamingoCode-Regular", size: 25)
+        let customFont = UIFont(name: "CamingoCode-Regular", size: 31)
         let customLabel = UIButton()
         //customLabel.font = customFont
         btn.setTitle("Get Started", for: .normal)

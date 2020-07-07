@@ -56,22 +56,22 @@ class Categories: UIViewController {
         lblTitle.widthAnchor.constraint(equalToConstant: 450).isActive=true //change
         lblTitle.heightAnchor.constraint(equalToConstant: 80).isActive=true //change
         self.view.addSubview(btnPython)
-        btnPython.topAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -50).isActive=true
+        btnPython.topAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -75).isActive=true
         btnPython.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
-        btnPython.widthAnchor.constraint(equalToConstant: 175).isActive=true
-        btnPython.heightAnchor.constraint(equalToConstant: 80).isActive=true
+        btnPython.widthAnchor.constraint(equalToConstant: 250).isActive=true
+        btnPython.heightAnchor.constraint(equalToConstant: 125).isActive=true
         btnPython.addTarget(self, action: #selector(btnPythonAction), for: .touchUpInside)
         self.view.addSubview(btnJava)
-        btnJava.topAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 50).isActive=true
+        btnJava.topAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 100).isActive=true
         btnJava.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
-        btnJava.widthAnchor.constraint(equalToConstant: 175).isActive=true
-        btnJava.heightAnchor.constraint(equalToConstant: 80).isActive=true
+        btnJava.widthAnchor.constraint(equalToConstant: 250).isActive=true
+        btnJava.heightAnchor.constraint(equalToConstant: 125).isActive=true
         btnJava.addTarget(self, action: #selector(btnJavaAction), for: .touchUpInside)
         self.view.addSubview(btnData)
-        btnData.topAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 150).isActive=true
+        btnData.topAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 275).isActive=true
         btnData.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
-        btnData.widthAnchor.constraint(equalToConstant: 175).isActive=true
-        btnData.heightAnchor.constraint(equalToConstant: 80).isActive=true
+        btnData.widthAnchor.constraint(equalToConstant: 250).isActive=true
+        btnData.heightAnchor.constraint(equalToConstant: 125).isActive=true
         btnData.addTarget(self, action: #selector(btnDataAction), for: .touchUpInside)
         self.view.addSubview(btnBack)
         btnBack.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 40).isActive=true
@@ -94,7 +94,7 @@ class Categories: UIViewController {
     
     let lblTitle: UILabel = {
         let lbl=UILabel()
-        let customFont = UIFont(name: "CamingoCode-Regular", size: 30)
+        let customFont = UIFont(name: "CamingoCode-Regular", size: 43)
         lbl.text="Choose a Category"
         lbl.textColor=UIColor.green
         lbl.textAlignment = .center
