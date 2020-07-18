@@ -53,9 +53,6 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         else if category == "code" {
             questionsArray = v.getCodeArray()
         }
-        else if category == "code" {
-            questionsArray = v.getcodeArray()
-        }
         questionsArray = Array(questionsArray[start...])
         setupViews()
     }
@@ -187,7 +184,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
             let customLabel = UIButton()
             btn.titleLabel?.font = customFont
             btn.setTitle("Next", for: .normal)
-            btn.setTitleColor(UIColor.green, for: .normal)
+            btn.setTitleColor(UIColor.white, for: .normal)
             btn.backgroundColor=UIColor.black
             btn.layer.cornerRadius=15
             btn.clipsToBounds=true
