@@ -21,6 +21,7 @@ class QuizCVCell: UICollectionViewCell {
     var btn4: UIButton!
     var btnsArray = [UIButton]()
     
+    
     weak var delegate: QuizCVCellDelegate?
     
     var question: Question? {
@@ -100,6 +101,9 @@ class QuizCVCell: UICollectionViewCell {
         let btn=UIButton()
         btn.tag=tag
         btn.setTitle("Option", for: .normal)
+        btn.titleLabel?.adjustsFontSizeToFitWidth = true;
+        btn.titleLabel?.numberOfLines = 3;
+        btn.titleEdgeInsets = UIEdgeInsets(top: 10,left: 10,bottom: 10,right: 10)
         btn.setTitleColor(UIColor.white, for: .normal)
         btn.backgroundColor=UIColor.black
         btn.layer.borderWidth=1
