@@ -133,23 +133,18 @@ class Questions {
        let cd30 = Question(questionText: "", options: ["", "", "", ""], correctAns: 1, quesNum:30,wrongAns: -1, explain:"Explain",isAnswered: false)
 
 
-    func gettermArray() -> Array<Question>{
+    func getTermArray() -> Array<Question>{
         return termsQuestionsArray
     }
     
-    func getdataArray() -> Array<Question>{
+    func getDataArray() -> Array<Question>{
         return dataQuestionsArray
     }
     
-    func getcodeArray() -> Array<Question>{
+    func getCodeArray() -> Array<Question>{
         return codeQuestionsArray
     }
 
     
     
 }
-
-
-
-
-

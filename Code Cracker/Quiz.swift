@@ -45,10 +45,13 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         self.view.addSubview(myCollectionView)
         let v = Questions()
         if category == "data" {
-            questionsArray = v.getdataArray()
+            questionsArray = v.getDataArray()
         }
         else if category == "term" {
-            questionsArray = v.gettermArray()
+            questionsArray = v.getTermArray()
+        }
+        else if category == "code" {
+            questionsArray = v.getCodeArray()
         }
         else if category == "code" {
             questionsArray = v.getcodeArray()
