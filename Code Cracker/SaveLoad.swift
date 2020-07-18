@@ -8,23 +8,23 @@
 
 import Foundation
 
-var questionsAnswereddata = [Int]()
-var questionsAnsweredterm = [Int]()
 var questionsAnsweredData = [Int]()
+var questionsAnsweredTerm = [Int]()
+var questionsAnsweredCode = [Int]()
 
 class Save {
     
     let defaults = UserDefaults.standard
     func saveArray() {
-           defaults.set(questionsAnswereddata, forKey: "saveddata")
-           defaults.set(questionsAnsweredterm, forKey: "savedterm")
            defaults.set(questionsAnsweredData, forKey: "savedData")
+           defaults.set(questionsAnsweredTerm, forKey: "savedTerm")
+           defaults.set(questionsAnsweredCode, forKey: "savedCode")
     }
     
     func loadArray() {
-        questionsAnswereddata = defaults.object(forKey: "saveddata") as? [Int] ?? [Int]()
-        questionsAnsweredterm = defaults.object(forKey: "savedterm") as? [Int] ?? [Int]()
         questionsAnsweredData = defaults.object(forKey: "savedData") as? [Int] ?? [Int]()
+        questionsAnsweredTerm = defaults.object(forKey: "savedTerm") as? [Int] ?? [Int]()
+        questionsAnsweredCode = defaults.object(forKey: "savedCode") as? [Int] ?? [Int]()
         
     }
 }
