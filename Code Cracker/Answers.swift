@@ -72,8 +72,8 @@ class QuizCVCell: UICollectionViewCell {
         lblQue.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -12).isActive=true
         lblQue.heightAnchor.constraint(equalToConstant: 150).isActive=true
         
-        let btnWidth: CGFloat = 160
-        let btnHeight: CGFloat = 80
+        let btnWidth: CGFloat = 175
+        let btnHeight: CGFloat = 100
         btn1 = getButton(tag: 0)
         addSubview(btn1)
         NSLayoutConstraint.activate([btn1.topAnchor.constraint(equalTo: self.bottomAnchor, constant: -350), btn1.rightAnchor.constraint(equalTo: self.centerXAnchor, constant: -10), btn1.widthAnchor.constraint(equalToConstant: btnWidth), btn1.heightAnchor.constraint(equalToConstant: btnHeight)])
@@ -114,10 +114,10 @@ class QuizCVCell: UICollectionViewCell {
     let lblQue: UILabel = {
         let lbl=UILabel()
         lbl.text="Q"
-        lbl.textColor=UIColor.black
+        lbl.textColor=UIColor.white
         lbl.textAlignment = .center
-        lbl.font = UIFont.systemFont(ofSize: 16)
-        lbl.numberOfLines=4
+        lbl.font = UIFont.systemFont(ofSize: 50)
+        lbl.numberOfLines=15
         lbl.translatesAutoresizingMaskIntoConstraints=false
         return lbl
     }()
