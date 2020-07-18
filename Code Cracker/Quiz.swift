@@ -217,14 +217,14 @@ extension QuizVC: QuizCVCellDelegate {
         btnExplain.setTitleColor(UIColor.green, for: .normal)
         btnExplain.isEnabled = true;
         if category == "data" {
-            questionsAnswereddata.append(questionsArray[index.item].quesNum)
+            questionsAnsweredData.append(questionsArray[index.item].quesNum)
         }
         else if category == "term" {
 
-            questionsAnsweredterm.append(questionsArray[index.item].quesNum)
+            questionsAnsweredTerm.append(questionsArray[index.item].quesNum)
         }
-        else if category == "Data" {
-            questionsAnsweredData.append(questionsArray[index.item].quesNum)
+        else if category == "code" {
+            questionsAnsweredCode.append(questionsArray[index.item].quesNum)
         }
         let saver = Save()
         saver.saveArray()

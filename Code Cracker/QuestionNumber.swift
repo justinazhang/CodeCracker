@@ -114,13 +114,13 @@ class QuestionNumber: UIViewController {
             btn.titleLabel?.font = customFont
             btn.setTitle(buttonTitle, for: .normal)
             btn.setTitleColor(UIColor.red, for: .normal)
-            if (category == "data" && questionsAnswereddata.contains(index)) {
+            if (category == "data" && questionsAnsweredData.contains(index)) {
                 btn.setTitleColor(UIColor.green, for: .normal)
             }
-            else if (category == "term" && questionsAnsweredterm.contains(index)) {
+            else if (category == "term" && questionsAnsweredTerm.contains(index)) {
                 btn.setTitleColor(UIColor.green, for: .normal)
             }
-            else if (category == "Data" && questionsAnsweredData.contains(index)) {
+            else if (category == "code" && questionsAnsweredCode.contains(index)) {
                 btn.setTitleColor(UIColor.green, for: .normal)
             }
             btn.backgroundColor=UIColor.black
