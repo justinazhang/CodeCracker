@@ -50,6 +50,9 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         else if category == "term" {
             questionsArray = v.gettermArray()
         }
+        else if category == "code" {
+            questionsArray = v.getcodeArray()
+        }
         questionsArray = Array(questionsArray[start...])
         setupViews()
     }
