@@ -24,9 +24,9 @@ class Categories: UIViewController {
     }
     
     
-    @objc func btnPythonAction() {
+    @objc func btndataAction() {
         let v=QuestionNumber()
-        v.setCategory(cat: "Python")
+        v.setCategory(cat: "data")
         self.navigationController?.pushViewController(v, animated: true)
        
     }
@@ -36,9 +36,9 @@ class Categories: UIViewController {
         self.navigationController?.pushViewController(v, animated: true)
     }
     
-    @objc func btnJavaAction() {
+    @objc func btntermAction() {
         let v=QuestionNumber()
-        v.setCategory(cat: "Java")
+        v.setCategory(cat: "term")
         self.navigationController?.pushViewController(v, animated: true)
         
     }
@@ -55,18 +55,18 @@ class Categories: UIViewController {
         lblTitle.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
         lblTitle.widthAnchor.constraint(equalToConstant: 450).isActive=true //change
         lblTitle.heightAnchor.constraint(equalToConstant: 80).isActive=true //change
-        self.view.addSubview(btnPython)
-        btnPython.topAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -120).isActive=true
-        btnPython.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
-        btnPython.widthAnchor.constraint(equalToConstant: 220).isActive=true
-        btnPython.heightAnchor.constraint(equalToConstant: 110).isActive=true
-        btnPython.addTarget(self, action: #selector(btnPythonAction), for: .touchUpInside)
-        self.view.addSubview(btnJava)
-        btnJava.topAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 40).isActive=true
-        btnJava.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
-        btnJava.widthAnchor.constraint(equalToConstant: 220).isActive=true
-        btnJava.heightAnchor.constraint(equalToConstant: 110).isActive=true
-        btnJava.addTarget(self, action: #selector(btnJavaAction), for: .touchUpInside)
+        self.view.addSubview(btndata)
+        btndata.topAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -120).isActive=true
+        btndata.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
+        btndata.widthAnchor.constraint(equalToConstant: 220).isActive=true
+        btndata.heightAnchor.constraint(equalToConstant: 110).isActive=true
+        btndata.addTarget(self, action: #selector(btndataAction), for: .touchUpInside)
+        self.view.addSubview(btnterm)
+        btnterm.topAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 40).isActive=true
+        btnterm.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
+        btnterm.widthAnchor.constraint(equalToConstant: 220).isActive=true
+        btnterm.heightAnchor.constraint(equalToConstant: 110).isActive=true
+        btnterm.addTarget(self, action: #selector(btntermAction), for: .touchUpInside)
         self.view.addSubview(btnData)
         btnData.topAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 200).isActive=true
         btnData.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
@@ -104,12 +104,14 @@ class Categories: UIViewController {
         return lbl
     }()
     
-    let btnPython: UIButton = {
+    let btndata: UIButton = {
         let btn = UIButton()
-        let customFont = UIFont(name: "CamingoCode-Regular", size: 28)
+        let customFont = UIFont(name: "CamingoCode-Regular", size: 20)
         let customLabel = UIButton()
         btn.titleLabel?.font = customFont
-        btn.setTitle("Python", for: .normal)
+        btn.setTitle("  Data Structures \n    Algorithms", for: .normal)
+        btn.titleLabel?.lineBreakMode = .byWordWrapping
+        btn.titleLabel?.numberOfLines = 2
         btn.setTitleColor(UIColor.green, for: .normal)
         btn.backgroundColor=UIColor.black
         btn.layer.cornerRadius=15
@@ -118,12 +120,12 @@ class Categories: UIViewController {
         return btn
     }()
     
-    let btnJava: UIButton = {
+    let btnterm: UIButton = {
         let btn = UIButton()
-        let customFont = UIFont(name: "CamingoCode-Regular", size: 28)
+        let customFont = UIFont(name: "CamingoCode-Regular", size: 20)
         let customLabel = UIButton()
         btn.titleLabel?.font = customFont
-        btn.setTitle("Java", for: .normal)
+        btn.setTitle("Techincal Terms", for: .normal)
         btn.setTitleColor(UIColor.green, for: .normal)
         btn.backgroundColor=UIColor.black
         btn.layer.cornerRadius=15
@@ -137,7 +139,7 @@ class Categories: UIViewController {
         let customFont = UIFont(name: "CamingoCode-Regular", size: 26)
         let customLabel = UIButton()
         btn.titleLabel?.font = customFont
-        btn.setTitle("Data Structures", for: .normal)
+        btn.setTitle("Coding", for: .normal)
         btn.setTitleColor(UIColor.green, for: .normal)
         btn.backgroundColor=UIColor.black
         btn.layer.cornerRadius=15

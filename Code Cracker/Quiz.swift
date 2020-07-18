@@ -44,11 +44,11 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         
         self.view.addSubview(myCollectionView)
         let v = Questions()
-        if category == "Python" {
-            questionsArray = v.getPythonArray()
+        if category == "data" {
+            questionsArray = v.getdataArray()
         }
-        else if category == "Java" {
-            questionsArray = v.getJavaArray()
+        else if category == "term" {
+            questionsArray = v.gettermArray()
         }
         questionsArray = Array(questionsArray[start...])
         setupViews()
@@ -216,12 +216,12 @@ extension QuizVC: QuizCVCellDelegate {
         btnExplain.backgroundColor=UIColor.black
         btnExplain.setTitleColor(UIColor.green, for: .normal)
         btnExplain.isEnabled = true;
-        if category == "Python" {
-            questionsAnsweredPython.append(questionsArray[index.item].quesNum)
+        if category == "data" {
+            questionsAnswereddata.append(questionsArray[index.item].quesNum)
         }
-        else if category == "Java" {
+        else if category == "term" {
 
-            questionsAnsweredJava.append(questionsArray[index.item].quesNum)
+            questionsAnsweredterm.append(questionsArray[index.item].quesNum)
         }
         else if category == "Data" {
             questionsAnsweredData.append(questionsArray[index.item].quesNum)
