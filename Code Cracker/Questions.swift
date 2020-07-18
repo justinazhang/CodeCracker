@@ -24,12 +24,15 @@ struct Question {
 class Questions {
     var termsQuestionsArray = [Question]()
     var dataQuestionsArray = [Question]()
+    var codeQuestionsArray = [Question]()
     
     init () {
         termsQuestionsArray = [py1, py2, py3, py4, py5, py6,py7,py8,py9,py10,py11,py12,py13,py14,py15,py16,
                                 py17,py18,py19,py20,py21,py22,py23,py24,py25,py26,py27,py28,py29,py30]
         dataQuestionsArray = [jv1, jv2, jv3, jv4, jv5, jv6,jv7,jv8,jv9,jv10,jv11,jv12,jv13,jv14,jv15,jv16,
         jv17,jv18,jv19,jv20,jv21,jv22,jv23,jv24,jv25,jv26,jv27,jv28,jv29,jv30]
+        codeQuestionsArray = [cd1, cd2, cd3, cd4, cd5, cd6,cd7,cd8,cd9,cd10,cd11,cd12,cd13,cd14,cd15,cd16,
+               cd17,cd18,cd19,cd20,cd21,cd22,cd23,cd24,cd25,cd26,cd27,cd28,cd29,cd30]
         
     }
     
@@ -96,6 +99,38 @@ class Questions {
     let py28 = Question(questionText: "What is the difference between a float and a double?", options: ["A double has more precision", "A float is faster", "A float takes up less memory", "All of the above"], correctAns: 3, quesNum:28,wrongAns: -1, explain:"Explain",isAnswered: false)
     let py29 = Question(questionText: "Which of the following is a float?", options: ["-55.765", "Jake", "-14", "1/3"], correctAns: 0, quesNum:29,wrongAns: -1, explain:"Explain",isAnswered: false)
     let py30 = Question(questionText: "What is data30?", options: ["2", "4", "8", "6"], correctAns: 1, quesNum:30,wrongAns: -1, explain:"Explain",isAnswered: false)
+    
+    
+    let cd1 = Question(questionText: "", options: ["", "", ""], correctAns: 1, quesNum:1,wrongAns: -1, explain:"Explain1",isAnswered: false)
+       let cd2 = Question(questionText: "", options: ["", "", "", ""], correctAns: 1, quesNum:2,wrongAns: -1, explain:"Explain2",isAnswered: false)
+       let cd3 = Question(questionText: "", options: ["", "", "", ""], correctAns: 3, quesNum:3,wrongAns: -1, explain:"Explain3",isAnswered: false)
+       let cd4 = Question(questionText: "", options: ["", "", "", ""], correctAns: 0, quesNum:4,wrongAns: -1, explain:"Explain",isAnswered: false)
+       let cd5 = Question(questionText: "", options: ["", "", "", ""], correctAns: 2, quesNum:5,wrongAns: -1, explain:"Explain",isAnswered: false)
+       let cd6 = Question(questionText: "?", options: ["", "", "", ""], correctAns: 0, quesNum:6,wrongAns: -1, explain:"Explain",isAnswered: false)
+       let cd7 = Question(questionText: "", options: ["", "", "", ""], correctAns: 1, quesNum:7,wrongAns: -1, explain:"Explain",isAnswered: false)
+       let cd8 = Question(questionText: "", options: ["", "", "", ""], correctAns: 2, quesNum:8,wrongAns: -1, explain:"Explain",isAnswered: false)
+       let cd9 = Question(questionText: "", options: ["", "", "", ""], correctAns: 3, quesNum:9,wrongAns: -1, explain:"Explain",isAnswered: false)
+       let cd10 = Question(questionText: "", options: ["", "", "", ""], correctAns: 2, quesNum:10,wrongAns: -1, explain:"Explain",isAnswered: false)
+       let cd11 = Question(questionText: "", options: ["", "", "", ""], correctAns: 3, quesNum:11,wrongAns: -1, explain:"Explain",isAnswered: false)
+       let cd12 = Question(questionText: "", options: ["", "", "", ""], correctAns: 3, quesNum:12,wrongAns: -1, explain:"Explain",isAnswered: false)
+       let cd13 = Question(questionText: "", options: ["", "", "", ""], correctAns: 0, quesNum:13,wrongAns: -1, explain:"Explain",isAnswered: false)
+       let cd14 = Question(questionText: "", options: ["", "", "", ""], correctAns: 1, quesNum:14,wrongAns: -1, explain:"Explain",isAnswered: false)
+       let cd15 = Question(questionText: "", options: ["", "", "", ""], correctAns: 0, quesNum:15,wrongAns: -1, explain:"Explain",isAnswered: false)
+       let cd16 = Question(questionText: "", options: ["", "", "", ""], correctAns: 0, quesNum:16,wrongAns: -1, explain:"Explain",isAnswered: false)
+       let cd17 = Question(questionText: "", options: ["", "", "", ""], correctAns: 0, quesNum:17,wrongAns: -1, explain:"Explain",isAnswered: false)
+       let cd18 = Question(questionText: "", options: ["", "", "", ""], correctAns: 1, quesNum:18,wrongAns: -1, explain:"Explain",isAnswered: false)
+       let cd19 = Question(questionText: "", options: ["", "", "", ""], correctAns: 3, quesNum:19,wrongAns: -1, explain:"Explain",isAnswered: false)
+       let cd20 = Question(questionText: "", options: ["", "", "", ""], correctAns: 0, quesNum:20,wrongAns: -1, explain:"Explain",isAnswered: false)
+       let cd21 = Question(questionText: "", options: ["", "", "", ""], correctAns: 3, quesNum:21,wrongAns: -1, explain:"Explain",isAnswered: false)
+       let cd22 = Question(questionText: "", options: ["", "", "", ""], correctAns: 2, quesNum:22,wrongAns: -1, explain:"Explain",isAnswered: false)
+       let cd23 = Question(questionText: "", options: ["", "", "", ""], correctAns: 1, quesNum:23,wrongAns: -1, explain:"Explain",isAnswered: false)
+       let cd24 = Question(questionText: "", options: ["", "", "", ""], correctAns: 2, quesNum:24,wrongAns: -1, explain:"Explain",isAnswered: false)
+       let cd25 = Question(questionText: "", options: ["", "", "", ""], correctAns: 3, quesNum:25,wrongAns: -1, explain:"Explain",isAnswered: false)
+       let cd26 = Question(questionText: "", options: ["", "", "", ""], correctAns: 1, quesNum:26,wrongAns: -1, explain:"Explain",isAnswered: false)
+       let cd27 = Question(questionText: "", options: ["", "", "", ""], correctAns: 3, quesNum:27,wrongAns: -1, explain:"Explain",isAnswered: false)
+       let cd28 = Question(questionText: "", options: ["", "", "", ""], correctAns: 3, quesNum:28,wrongAns: -1, explain:"Explain",isAnswered: false)
+       let cd29 = Question(questionText: "", options: ["", "", "", ""], correctAns: 0, quesNum:29,wrongAns: -1, explain:"Explain",isAnswered: false)
+       let cd30 = Question(questionText: "", options: ["", "", "", ""], correctAns: 1, quesNum:30,wrongAns: -1, explain:"Explain",isAnswered: false)
 
 
     func gettermArray() -> Array<Question>{
@@ -106,6 +141,9 @@ class Questions {
         return dataQuestionsArray
     }
     
+    func getcodeArray() -> Array<Question>{
+        return codeQuestionsArray
+    }
 
     
     
