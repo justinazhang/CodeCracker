@@ -3,7 +3,7 @@
 //  Code Cracker
 //
 //  Created by Justin Zhang on 6/30/20.
-//  Copyright © 2020 Roaz. All rights reserved.
+//  Copyright © 2020 REZEN. All rights reserved.
 //
 
 import UIKit
@@ -62,9 +62,9 @@ class QuestionNumber: UIViewController {
     func createButtonRow(startY:Int,firstButtonIndex:Int,sHeight:CGFloat,sWidth:CGFloat) {
         self.view.addSubview(buttonList[firstButtonIndex])
         buttonList[firstButtonIndex].topAnchor.constraint(equalTo: self.view.topAnchor, constant:CGFloat(sHeight/8+CGFloat(startY))).isActive=true
-        buttonList[firstButtonIndex].leftAnchor.constraint(equalTo: self.view.leftAnchor,constant: sWidth/13).isActive=true //starting left point of the button row
-        buttonList[firstButtonIndex].widthAnchor.constraint(equalToConstant: sWidth/4).isActive=true //width of button
-        buttonList[firstButtonIndex].heightAnchor.constraint(equalToConstant: sWidth/4).isActive=true //height of button
+        buttonList[firstButtonIndex].leftAnchor.constraint(equalTo: self.view.leftAnchor,constant: sWidth/13).isActive=true
+        buttonList[firstButtonIndex].widthAnchor.constraint(equalToConstant: sWidth/4).isActive=true
+        buttonList[firstButtonIndex].heightAnchor.constraint(equalToConstant: sWidth/4).isActive=true 
         buttonList[firstButtonIndex].addTarget(self, action: #selector(btnfun), for: .touchUpInside)
         createButtonRowHelper(prevButton:buttonList[firstButtonIndex],firstIndex:firstButtonIndex,sHeight:sHeight,sWidth: sWidth)
     }

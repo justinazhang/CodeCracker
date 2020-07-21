@@ -3,7 +3,7 @@
 //  Code Cracker
 //
 //  Created by Justin Zhang on 6/27/20.
-//  Copyright © 2020 Roaz. All rights reserved.
+//  Copyright © 2020 REZEN. All rights reserved.
 //
 
 import UIKit
@@ -38,7 +38,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         myCollectionView.register(QuizCVCell.self, forCellWithReuseIdentifier: "Cell")
         myCollectionView.showsHorizontalScrollIndicator = false
         myCollectionView.translatesAutoresizingMaskIntoConstraints=false
-        myCollectionView.backgroundColor=UIColor.darkGray //change
+        myCollectionView.backgroundColor=UIColor.darkGray 
         myCollectionView.isPagingEnabled = false
         myCollectionView.isScrollEnabled = false
         
