@@ -106,7 +106,7 @@ class Questions {
        let cd3 = Question(questionText: "", options: ["", "", "", ""], correctAns: 3, quesNum:3,wrongAns: -1, explain:"Explain3",isAnswered: false)
        let cd4 = Question(questionText: "", options: ["", "", "", ""], correctAns: 0, quesNum:4,wrongAns: -1, explain:"Explain",isAnswered: false)
        let cd5 = Question(questionText: "", options: ["", "", "", ""], correctAns: 2, quesNum:5,wrongAns: -1, explain:"Explain",isAnswered: false)
-       let cd6 = Question(questionText: "?", options: ["", "", "", ""], correctAns: 0, quesNum:6,wrongAns: -1, explain:"Explain",isAnswered: false)
+       let cd6 = Question(questionText: "", options: ["", "", "", ""], correctAns: 0, quesNum:6,wrongAns: -1, explain:"Explain",isAnswered: false)
        let cd7 = Question(questionText: "", options: ["", "", "", ""], correctAns: 1, quesNum:7,wrongAns: -1, explain:"Explain",isAnswered: false)
        let cd8 = Question(questionText: "", options: ["", "", "", ""], correctAns: 2, quesNum:8,wrongAns: -1, explain:"Explain",isAnswered: false)
        let cd9 = Question(questionText: "", options: ["", "", "", ""], correctAns: 3, quesNum:9,wrongAns: -1, explain:"Explain",isAnswered: false)
