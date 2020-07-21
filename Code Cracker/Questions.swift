@@ -3,7 +3,7 @@
 //  Code Cracker
 //
 //  Created by Justin Zhang on 7/3/20.
-//  Copyright © 2020 Roaz. All rights reserved.
+//  Copyright © 2020 REZEN. All rights reserved.
 //
 
 import Foundation

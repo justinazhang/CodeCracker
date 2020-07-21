@@ -3,7 +3,7 @@
 //  Code Cracker
 //
 //  Created by Justin Zhang on 6/27/20.
-//  Copyright © 2020 Roaz. All rights reserved.
+//  Copyright © 2020 REZEN. All rights reserved.
 //
 
 import UIKit
@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        RunLoop.current.run(until: Date(timeIntervalSinceNow: 1.5))
+        RunLoop.current.run(until: Date(timeIntervalSinceNow: 1.0))
         self.window = UIWindow(frame: UIScreen.main.bounds)
         if let window = self.window {
             window.backgroundColor = UIColor.white
