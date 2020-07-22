@@ -53,8 +53,12 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         else if category == "code" {
             questionsArray = v.getCodeArray()
         }
+        
         questionsArray = Array(questionsArray[start...])
         setupViews()
+        if category == "term" {
+            btnExplain.isHidden = true
+        }
     }
 
 
@@ -153,6 +157,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         btnNext.widthAnchor.constraint(equalTo: self.view.widthAnchor,multiplier:0.5).isActive=true
         btnNext.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
         btnNext.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -40).isActive=true
+        
         self.view.addSubview(btnExplain)
         btnExplain.heightAnchor.constraint(equalToConstant: 50).isActive=true
         btnExplain.widthAnchor.constraint(equalToConstant:50).isActive=true

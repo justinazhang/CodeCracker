@@ -28,10 +28,14 @@ class QuizCVCell: UICollectionViewCell {
         didSet {
             guard let unwrappedQue = question else { return }
             lblQue.text = unwrappedQue.questionText
+            if(unwrappedQue.imgName != "None") {
+            imgView.image = UIImage(named: unwrappedQue.imgName)
+            }
             btn1.setTitle(unwrappedQue.options[0], for: .normal)
             btn2.setTitle(unwrappedQue.options[1], for: .normal)
             btn3.setTitle(unwrappedQue.options[2], for: .normal)
             btn4.setTitle(unwrappedQue.options[3], for: .normal)
+                
             
             if unwrappedQue.isAnswered {
                 btnsArray[unwrappedQue.correctAns].setTitleColor(UIColor.green, for: .normal)
@@ -67,12 +71,20 @@ class QuizCVCell: UICollectionViewCell {
     
     func setupViews() {
 
-        
+        addSubview(imgView)
+        let screenRect = UIScreen.main.bounds
+        let screenWidth = screenRect.size.width
+        let screenHeight = screenRect.size.height
+        imgView.topAnchor.constraint(equalTo: self.topAnchor, constant: 50).isActive=true
+        imgView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive=true
+        imgView.widthAnchor.constraint(equalToConstant: screenWidth - 20).isActive=true
+        imgView.heightAnchor.constraint(equalToConstant:    screenHeight / 2 ).isActive=true
         addSubview(lblQue)
         lblQue.topAnchor.constraint(equalTo: self.topAnchor, constant: 50).isActive=true
         lblQue.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 12).isActive=true
         lblQue.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -12).isActive=true
         lblQue.heightAnchor.constraint(equalToConstant: 150).isActive=true
+        
         
         let btnWidth: CGFloat = 175
         let btnHeight: CGFloat = 100
@@ -114,14 +126,22 @@ class QuizCVCell: UICollectionViewCell {
         return btn
     }
     
-
+    
+    
+    let imgView: UIImageView = {
+        let v=UIImageView()
+    
+        v.contentMode = .scaleAspectFit
+        v.translatesAutoresizingMaskIntoConstraints=false
+        return v
+    }()
     
     let lblQue: UILabel = {
         let lbl=UILabel()
         lbl.text="Q"
         lbl.textColor=UIColor.white
         lbl.textAlignment = .center
-        lbl.font = UIFont.systemFont(ofSize: 50)
+        lbl.font = UIFont.systemFont(ofSize: 20)
         lbl.numberOfLines=15
         lbl.translatesAutoresizingMaskIntoConstraints=false
         return lbl
