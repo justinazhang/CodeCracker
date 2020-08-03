@@ -156,7 +156,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         btnNext.heightAnchor.constraint(equalToConstant: 50).isActive=true
         btnNext.widthAnchor.constraint(equalTo: self.view.widthAnchor,multiplier:0.5).isActive=true
         btnNext.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive=true
-        btnNext.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -40).isActive=true
+        btnNext.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -25).isActive=true
         
         self.view.addSubview(btnExplain)
         btnExplain.heightAnchor.constraint(equalToConstant: 50).isActive=true
@@ -225,22 +225,26 @@ extension QuizVC: QuizCVCellDelegate {
         btnExplain.setTitleColor(UIColor.green, for: .normal)
         btnExplain.isEnabled = true;
         if category == "data" {
+            if !questionsAnsweredData.contains(questionsArray[index.item].quesNum) {
             questionsAnsweredData.append(questionsArray[index.item].quesNum)
+            }
         }
         else if category == "term" {
-
+            if !questionsAnsweredTerm.contains(questionsArray[index.item].quesNum) {
             questionsAnsweredTerm.append(questionsArray[index.item].quesNum)
+            }
         }
         else if category == "code" {
+            if !questionsAnsweredCode.contains(questionsArray[index.item].quesNum) {
             questionsAnsweredCode.append(questionsArray[index.item].quesNum)
+            
+            }
+            
         }
         let saver = Save()
         saver.saveArray()
         if questionsArray[index.item].correctAns != btnIndex {
             questionsArray[index.item].wrongAns = btnIndex
-            score -= 1
-        } else {
-            score += 1
         }
         if currentQuestionNumber == questionsArray.count {
             btnNext.backgroundColor=UIColor.gray
