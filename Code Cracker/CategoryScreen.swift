@@ -3,7 +3,7 @@
 //  Code Cracker
 //
 //  Created by Justin Zhang on 6/28/20.
-//  Copyright © 2020 Justin Zhang Justin Kaufman. All rights reserved.
+//  Copyright © 2020 REZEN. All rights reserved.
 //
 
 

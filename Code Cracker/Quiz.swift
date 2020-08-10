@@ -24,7 +24,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title="Home"
-        self.view.backgroundColor=UIColor.darkGray //change
+        self.view.backgroundColor=UIColor.darkGray
 
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -66,6 +66,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     @objc func btnBackAction() {
         let v=QuestionNumber()
         v.setCategory(cat: category)
+        
         self.navigationController?.pushViewController(v, animated: true)
     }
 
@@ -115,10 +116,14 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
 
    @objc func btnNextAction() {
         if currentQuestionNumber != questionsArray.count {
+            btnNext.isUserInteractionEnabled = false
+            Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false, block: { _ in
+                self.btnNext.isUserInteractionEnabled = true
+            })
             myCollectionView.isScrollEnabled = true
             let collectionBounds = self.myCollectionView.bounds
             var contentOffset: CGFloat = 0
-            contentOffset = CGFloat(floor(self.myCollectionView.contentOffset.x + collectionBounds.size.width))
+            contentOffset = CGFloat(self.myCollectionView.contentOffset.x + collectionBounds.size.width + 1)
             currentQuestionNumber += currentQuestionNumber >= questionsArray.count + start ? 0 : 1
             self.moveToFrame(contentOffset: contentOffset)
         }

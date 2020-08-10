@@ -109,6 +109,7 @@ class QuizCVCell: UICollectionViewCell {
         btn4.addTarget(self, action: #selector(btnOptionAction), for: .touchUpInside)
     }
     
+    
     func getButton(tag: Int) -> UIButton {
         let btn=UIButton()
         btn.tag=tag
