@@ -63,7 +63,6 @@ class QuizCVCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         btn1.setTitleColor(UIColor.white, for: .normal)
-        
         btn2.setTitleColor(UIColor.white, for: .normal)
         btn3.setTitleColor(UIColor.white, for: .normal)
         btn4.setTitleColor(UIColor.white, for: .normal)

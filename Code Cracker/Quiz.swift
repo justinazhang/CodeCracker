@@ -171,6 +171,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         btnExplain.backgroundColor=UIColor.gray
         btnExplain.setTitleColor(UIColor.black, for: .normal)
         btnExplain.isEnabled = false;
+        
         self.view.addSubview(btnBack)
         btnBack.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 40).isActive=true
         btnBack.rightAnchor.constraint(equalTo: self.view.rightAnchor,constant: -30).isActive=true

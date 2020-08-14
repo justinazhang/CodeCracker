@@ -92,7 +92,7 @@ class QuestionNumber: UIViewController {
 
         self.view.addSubview(buttonList[n+firstIndex])
         buttonList[n+firstIndex].topAnchor.constraint(equalTo: oldButton.topAnchor).isActive=true
-            buttonList[n+firstIndex].leftAnchor.constraint(equalTo: oldButton.leftAnchor,constant: sWidth/3.3).isActive=true
+        buttonList[n+firstIndex].leftAnchor.constraint(equalTo: oldButton.leftAnchor,constant: sWidth/3.3).isActive=true
         buttonList[n+firstIndex].widthAnchor.constraint(equalTo: oldButton.widthAnchor).isActive=true
         buttonList[n+firstIndex].heightAnchor.constraint(equalTo: oldButton.heightAnchor).isActive=true
         buttonList[n+firstIndex].addTarget(self, action: #selector(btnfun), for: .touchUpInside)

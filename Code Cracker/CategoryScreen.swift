@@ -15,7 +15,6 @@ class Categories: UIViewController {
     
     
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title="Category Screen"
@@ -23,17 +22,16 @@ class Categories: UIViewController {
         setupViews()
     }
     
+    @objc func btnBackAction() {
+        let v=ViewController()
+        self.navigationController?.pushViewController(v, animated: true)
+    }
     
     @objc func btnDataAction() {
         let v=QuestionNumber()
         v.setCategory(cat: "data")
         self.navigationController?.pushViewController(v, animated: true)
        
-    }
-    
-    @objc func btnBackAction() {
-        let v=ViewController()
-        self.navigationController?.pushViewController(v, animated: true)
     }
     
     @objc func btnTermAction() {
